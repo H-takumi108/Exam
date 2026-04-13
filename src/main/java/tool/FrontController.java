@@ -23,19 +23,18 @@ public class FrontController extends HttpServlet {
 
             // 遷移先URLを取得
             action.execute(req, res);
-
-
+            
             } catch (Exception e) {
             e.printStackTrace();
             // エラーページへリダイレクト
             req.getRequestDispatcher("/error.jsp").forward(req, res);
-    }
-  }
+        }
+    }
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 	doGet(req,res);
-
-  }
+	
+   }
 }
  
