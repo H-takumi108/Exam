@@ -19,4 +19,4 @@ public class LogoutAction extends Action {
 		
 		return "yyyyy.jsp";//エラー処理
 	}
-}
+} 
