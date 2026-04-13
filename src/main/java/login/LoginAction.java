@@ -26,4 +26,4 @@ public class LoginAction extends Action {
 
         return "login-error.jsp";
     }
-}
+} 

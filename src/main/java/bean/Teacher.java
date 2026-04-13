@@ -38,4 +38,4 @@ public class Teacher implements java.io.Serializable {
 	public void setSchool_cd(String school_cd) {
 		this.school_cd = school_cd;
 	}
-}
+} 
