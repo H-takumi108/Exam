@@ -37,11 +37,11 @@ public class StudentListAction extends Action {
     	entYearStr = request.getParameter("f1");
     	classNum = request.getParameter("f2");
     	isAttendStr = request.getParameter("f3");
-    	
+    	 
     	if (entYearStr != null) {
     		entYear = Integer.parseInt(entYearStr);
     	}
-    	
+    
     	List<Integer> entYearSet = new ArrayList<>();
     	for (int i = year -10;i < year + 1; i++) {
     		entYearSet.add(i);
