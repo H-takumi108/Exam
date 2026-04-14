@@ -5,9 +5,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import tool.Action;
 
 public class LoginAction extends Action {
-    public String execute(
+    public void execute(
         HttpServletRequest request, HttpServletResponse response
     ) throws Exception {
-    	return "/login.jsp";
+    	request.getRequestDispatcher("login.jsp")
+		.forward(request, response);
     }
 }  
