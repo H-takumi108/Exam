@@ -12,7 +12,46 @@ public class StudentDao extends Dao {
 	private Strings baseSql;
 	
 	public Student get(String no) throws Exception {
+		Student student = new Student();
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
 		
+		try {
+			statement = connection.prepareStatement("select * from student where no=?");
+			statement.setString(1, no);
+			ResultSet rSet = statement.executeQuery();
+			SchoolDao schoolDao = new SchoolDao();
+			
+			if (rSet.next()) {
+				student.setNo(rSet.getString("no"));
+				student.setName(rSet.getString("name"));
+				student.setEntYear(rSet.getInt("ent_year"));
+				student.setClassNum(rSet.getString("class_num"));
+				student.setAttend(rSet.getBoolean("is_attend"));
+				
+				student.setSchool(schoolDao.get(r.set.getString("school_cd")));
+			} else {
+				student = null;
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+		return student;
 	}
 	
 	private List<Student> postFilter(ResultSet rSet. School school) throws Exception {
