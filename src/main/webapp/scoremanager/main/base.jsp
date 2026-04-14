@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,7 +31,7 @@
 <body class="bg-light">
     
     <!-- ヘッダー -->
-    <header class="bg-white shadow-sm py-3 py-4 mb-4">
+    <header class="bg-white shadow-sm py-4 mb-4">
         <h1 class="page-title">${param.title}</h1>
         
         <div class="float-end mt-2">
@@ -46,7 +46,7 @@
     
     <!-- フッター -->
     <footer class="text-center text-muted py-3 mt-5">
-        @ 2023 TIC
+        © 2023 TIC
         大原学園
     </footer>
 
