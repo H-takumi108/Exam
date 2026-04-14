@@ -10,6 +10,34 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = { "*.action" })
 public class FrontController extends HttpServlet {
+<<<<<<< HEAD
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        try {
+            // パスを取得
+            String path = req.getServletPath().substring(1);
+            // ファイル名を取得しクラス名に変換
+            String name = path.replace(".a", "A").replace('/', '.');
+            // アクションクラスのインスタンスを返却
+            Action action = (Action) Class.forName(name).getDeclaredConstructor().newInstance();
+
+            // 遷移先URLを取得
+            action.execute(req, res);
+            
+            } catch (Exception e) {
+            e.printStackTrace();
+            // エラーページへリダイレクト
+            req.getRequestDispatcher("/error.jsp").forward(req, res);
+        }
+    }
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+	doGet(req,res);
+	
+   }
+=======
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException, IOException {
@@ -34,5 +62,6 @@ protected void doPost(HttpServletRequest req, HttpServletResponse res)
 		throws ServletException, IOException {
 	doGet(req,res);
 	}
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 }
  
