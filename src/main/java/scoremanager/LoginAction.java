@@ -1,4 +1,4 @@
-package login;
+package scoremanager;
 
 import bean.Teacher;
 import dao.TeacherDAO;
