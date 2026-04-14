@@ -75,7 +75,7 @@ public class StudentDao extends Dao {
 					throw sqle;
 				}
 			}
-		}
+		} 
 		
 		if (count > 0) {
 			return true;
