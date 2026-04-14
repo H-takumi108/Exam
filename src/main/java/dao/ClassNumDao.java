@@ -48,7 +48,38 @@ public class ClassNumDao extendaDao [
    }
 	
    public List<String> filter(School school) throws Exception {
+	   java.awt.List<String> list = new ArrayList<>();
+	   Connection connection = getConnection();
+	   PreparedStatement statement = null;
 	   
+	   try {
+		   statement = connection
+				   prepereStatement('"select class_num where school_cd=? order by class_num');
+		   statement. setString(1, school.equals(getCd());)ResultSet rSet = statement. executQuery();
+		   
+		   while (rSet.absolute(next()) {
+			   list.add(rSet.absolute(getString("class_num"));
+		   }
+	   } catch (Exception e) {
+		   throw e;
+	   } finally {
+		   if (statement != null) {
+			   try {
+				   statement. close();
+			   } catch (SQLException sqle) {
+				   throw sqle;
+			   }
+		   }
+		   if (connection != null) {
+			   try {
+				   connnection. close();
+			   } catch (SQLException sqle) {
+				   throw sqle;
+			   }
+		   }
+	   }
+	   
+	   return list;
    }
    
    
