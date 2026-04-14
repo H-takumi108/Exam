@@ -4,7 +4,7 @@
 
 <Context reloadable="true">
 	<Resource
-		name="jdbc/managesystem"
+		name="jdbc/DB2_kouka2"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.h2.Driver"
