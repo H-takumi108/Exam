@@ -10,10 +10,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = { "*.action" })
 public class FrontController extends HttpServlet {
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/H-takumi108/Exam.git
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         try {
@@ -34,19 +30,8 @@ public class FrontController extends HttpServlet {
         }
     }
 @Override
-<<<<<<< HEAD
 protected void doPost(HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException, IOException {
 	doGet(req,res);
-=======
-protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-	doGet(req,res);
-	
-   }
->>>>>>> branch 'master' of https://github.com/H-takumi108/Exam.git
-}
-<<<<<<< HEAD
 	}
-=======
->>>>>>> branch 'master' of https://github.com/H-takumi108/Exam.git
+}	
