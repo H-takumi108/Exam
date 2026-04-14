@@ -9,7 +9,7 @@ import bean.Student;
 
 public class StudentDao extends Dao {
 	
-	private Strings baseSql;
+	private String baseSql;
 	 
 	public Student get(String no) throws Exception {
 		Student student = new Student();
