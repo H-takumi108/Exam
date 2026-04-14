@@ -5,10 +5,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import tool.Action;
 
 public class MenuAction extends Action {
-    public void execute(
+    public String execute(
         HttpServletRequest request, HttpServletResponse response
     ) throws Exception {
-    	request.getRequestDispatcher("menu.jsp")
-		.forward(request, response);
+    	return "/menu.jsp";
     }
 }  

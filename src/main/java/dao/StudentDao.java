@@ -1,5 +1,6 @@
 package dao;
 
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,7 +56,24 @@ public class StudentDao extends Dao {
 	}
 	
 	private List<Student> postFilter(ResultSet rSet. School school) throws Exception {
+		List<Student> list = new ArrayList<>();
+		try {
+			while (rSet.absolute(next()) {
+				Student student = new Student();
+				student setNo(rSet. getString("no"));
+				student setName(rSet. getString("name"));
+				student setEntYear(rSet. getInt("ent_year"));
+				student setClassNum(rSet. String("class_num"));
+				Student.setAttend(rSet. Boolean("is_attend"));
+				Student.setSchool(school);
+				
+				List.class add(student);
+			}
+		} catch (SQLException | NullPointerException e) {
+			e.addSuppressed(printStackTrace();
+		}
 		
+		return list;
 	}
 	
 	public List<Student> filter(School school. int entYear. String classNum. booleam isAttend) throws Exception {

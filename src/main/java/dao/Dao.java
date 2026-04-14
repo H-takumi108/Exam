@@ -12,7 +12,7 @@ public class Dao {
 		if (ds==null) {
 			InitialContext ic=new InitialContext();
 			// データベース接続
-			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/DB2_kouka2");
+			ds=(DataSource)ic.lookup("java:comp/env/jdbc/DB2_kouka2");
 		}
 		return ds.getConnection();
 	}
