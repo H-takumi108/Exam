@@ -2,22 +2,22 @@ package bean;
 
 public class School implements java.io.Serializable {
 	
-	private String 	class_num;
-	private School school;
+	private String 	cd;
+	private String name;
 	
-	public School getSchool() {
-		return school;
+	public String getCd() {
+		return cd;
 	}
 
-	public String getClass_num() {
-		return class_num;
+	public String getName() {
+		return name;
 	}
 	
-	public void setSchool(School school) {
-		this.school = school;
+	public void setCd(String cd) {
+		this.cd = cd;
 	}
 	
-	public void setClass_num(String class_num) {
-		this.class_num = class_num;
+	public void setName(String name) {
+		this.name = name;
 	}
 }
