@@ -29,4 +29,4 @@ public class Subject implements java.io.Serializable {
 	public void setSchool(School school) {
 		this.school = school;
 	}
-}
+} 
