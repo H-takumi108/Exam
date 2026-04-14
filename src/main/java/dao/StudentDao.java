@@ -10,7 +10,7 @@ import bean.Student;
 public class StudentDao extends Dao {
 	
 	private Strings baseSql;
-	
+	 
 	public Student get(String no) throws Exception {
 		Student student = new Student();
 		Connection connection = getConnection();
