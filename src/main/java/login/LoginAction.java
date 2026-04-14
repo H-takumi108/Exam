@@ -17,7 +17,7 @@ public class LoginAction extends Action {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
         TeacherDAO dao = new TeacherDAO();
-        Teacher teacher = dao.search(id, password);
+        Teacher teacher = dao.login(id, password);
 
         if (teacher != null) {
             session.setAttribute("teacher", teacher);
@@ -26,4 +26,4 @@ public class LoginAction extends Action {
 
         return "login-error.jsp";
     }
-} 
+}  
