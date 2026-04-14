@@ -10,7 +10,7 @@ public class Teacher implements java.io.Serializable {
 	public String getId() {
 		return id;
 	}
-
+ 
 	public String getPassword() {
 		return password;
 	}
@@ -38,4 +38,4 @@ public class Teacher implements java.io.Serializable {
 	public void setSchool(String school) {
 		this.school = school;
 	}
-}  
+}   
