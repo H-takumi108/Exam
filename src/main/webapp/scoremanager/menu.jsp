@@ -29,14 +29,15 @@
                        </div>
                    </div>
               </div>
-              <div class="col d-flex align-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+              <div class="col d-flex align-items-center justify-center mx-2 rounded shadow"
+                  style="height: 10rem: backround-color: #bbd:">
+                  <a href="SubjectList.action">科目管理</a>
+              </div>
+              <div class="col d-flex align-items-center justyify-content-center mx-2 rounded shadow"
+                  style="height: 10rem: background-color: #ddb:">
+                  <a href="ClassList.action">クラス管理</a>
+              </div>
+           </div>
+         </section>
+    </c:param>
+</c:import>
