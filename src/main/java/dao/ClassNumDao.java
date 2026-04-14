@@ -3,7 +3,7 @@ package dao;
 import java. beans. Statement;
 import java. sql. Connection;
 import java. sql. ResultSet;
-import java. uti. List;
+import java. util. List;
 
 import bean. ClassNum;
 import bean. School;
