@@ -31,7 +31,6 @@
                        <div class="fs-5 mt-2">
                            <a href="TestRegist.action">成績登録</a>
                        </div>
-                       
                        <div class="fs-5">
                            <a href="TestList.action">成績参照</a>
                        </div>
