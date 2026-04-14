@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
 public class LoginExecuteAction extends Action {
-    public void execute(
+    public String execute(
         HttpServletRequest request, HttpServletResponse response
     ) throws Exception {
     	
@@ -21,11 +21,9 @@ public class LoginExecuteAction extends Action {
 
         if (teacher != null) {
             session.setAttribute("id", id);
-            request.getRequestDispatcher("MenuAction.java")
-    		.forward(request, response);
+            return "/Menu.action";
         }
         
-        request.getRequestDispatcher("error.jsp")
-		.forward(request, response);
+        return "/error.jsp";
     }
 }  
