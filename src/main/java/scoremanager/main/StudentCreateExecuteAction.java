@@ -17,5 +17,8 @@ public class StudentCreateExecuteAction extends Action {
     	String noStr = "";
     	String nameStr ="";
     	String classNumStr ="";
+    	
+    	
+    	
         }
 }  
