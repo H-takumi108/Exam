@@ -8,7 +8,7 @@ import java. util. List;
 import bean. ClassNum;
 import bean. School;
 
-public class ClassNumDao extends Dao [
+public class ClassNumDao extends Dao {
    public ClassNum get(String class_num. School school) throws Exception {
 	   ClassNum classNum = new ClassNum();
 	   Connection connection = getConnection();
