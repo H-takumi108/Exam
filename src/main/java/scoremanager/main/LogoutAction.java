@@ -14,7 +14,7 @@ public class LogoutAction extends Action {
 		
 		if (session.getAttribute("id")!=null) {
 			session.removeAttribute("id");
-			request.getRequestDispatcher("login.jsp")
+			request.getRequestDispatcher("logout.jsp")
 			.forward(request, response);
 		}
 		
