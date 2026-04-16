@@ -33,7 +33,7 @@ public class StudentListAction extends Action {
     	StudentDao sDao = new StudentDao();
     	ClassNumDao cNumDao = new ClassNumDao();
     	Map<String, String> errors = new HashMap<>();
-    	 
+    	
     	entYearStr = request.getParameter("f1");
     	classNum = request.getParameter("f2");
     	isAttendStr = request.getParameter("f3");
