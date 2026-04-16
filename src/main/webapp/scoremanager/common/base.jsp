@@ -9,7 +9,7 @@
     <title>${param.title}</title>
 
     <!-- Bootstrap -->
-    <link href="/ExamSystem/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/ExamSystem/webapp/css/bootstrap.min.css" rel="stylesheet">
 	
     <style>
         .page-title {
