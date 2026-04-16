@@ -83,7 +83,7 @@ public class ClassNumDao extendaDao [
    }
    
    
-   public booleam save(ClassNum classNum)]throws Exception {
+   public booleam save(ClassNum classNum) throws Exception {
 	
 	
    }
