@@ -23,16 +23,17 @@ public class StudentCreateExecuteAction extends Action {
     	nameStr = req.getParameter("nameStr");
     	classNumStr = req.getParameter("classNumStr");
     
-    	if (noStr == null || noStr.trim().isEmpty()) {
-    	   pass
-    	} else if (nameStr == null || nameStr.trim().isEmpty()) {
-    	     pass
+    	boolean error = false;
+    	if (noStr == null) {
+    	   session.setAttribute("error1", "このフィードを入力して下さい");
+    	   error = true;
     	}
-
-    	if () {
-    	    req.setAttribute("error", errorMessage);
-    	    req.getRequestDispatcher("student_create.jsp").forward(req, res);
-    	    return;
+    	if (nameStr == null) {
+    		session.setAttribute("error2", "このフィードを入力して下さい");
+     	   error = true;
+    	}
+    	if (error = true) {
+    		req.getRequestDispatcher("studentcreate.jsp").forward(req, res);
     	}
         }
 }  
