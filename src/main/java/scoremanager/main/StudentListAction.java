@@ -55,7 +55,25 @@ public class StudentListAction extends Action {
     		students = sDao.filter(teacher.getSchool(),entYear,isAttend);
     	} else if (entYear != 0 && classNum == null || entYear == 0 && classNum.equals("0")) {
     		students = sDao.filter(teacher.getSchool(),isAttend);
+    	} else {
+    		errors.put("f1", "クラスを指定す場合は入学年度を指定してください");
+    		request.setAttribute("errors", errors);
+    		students = sDao.filter(teacher.getSchool(), isAttend);
     	}
-    	//途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ途中１６ページ
+    	
+    	request.setAttribute("f1", entYear);
+    	request.setAttribute("f2", classNum);
+    	
+    	if (isAttendStr != null) {
+    		isAttend = true;
+    		request.setAttribute("f3", isAttendStr);
+    	}
+    	
+    	request.setAttribute("student", students);
+    	request.setAttribute("class_num_set", list);
+    	request.setAttribute("ent_year_set", entYearSet);
+    	
+    	request.getRequestDispatcher("student_list_jps").forward(request, response);
+    		
     }
 }  

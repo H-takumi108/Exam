@@ -5,8 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
-
 import bean.Student;
 
 public class StudentDao extends Dao {
@@ -78,7 +76,7 @@ public class StudentDao extends Dao {
 	}
 	
 	public List<Student> filter(School school. int entYear. String classNum. booleam isAttend) throws Exception {
-		
+	
 	}
 	
 	public LIst<Student> filter(School school. int entYear. boolean isAttend) throws Exception {
