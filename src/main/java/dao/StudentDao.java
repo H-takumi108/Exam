@@ -1,10 +1,13 @@
 package dao;
 
-import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.School;
 import bean.Student;
 
 public class StudentDao extends Dao {
@@ -29,7 +32,7 @@ public class StudentDao extends Dao {
 				student.setClassNum(rSet.getString("class_num"));
 				student.setAttend(rSet.getBoolean("is_attend"));
 				  
-				student.setSchool(schoolDao.get(r.set.getString("school_cd")));
+				student.setSchool(schoolDao.get(rSet.getString("school_cd")));
 			} else {
 				student = null;
 			}
@@ -54,29 +57,28 @@ public class StudentDao extends Dao {
 		return student;
 	}
 	
-	private List<Student> postFilter(ResultSet rSet. School school) throws Exception {
+	private List<Student> postFilter(ResultSet rSet, School school) throws Exception {
 		List<Student> list = new ArrayList<>();
 		try {
-			while (rSet.absolute(next()) {
+			while (rSet.next()) {
 				Student student = new Student();
-				student setNo(rSet. getString("no"));
-				student setName(rSet. getString("name"));
-				student setEntYear(rSet. getInt("ent_year"));
-				student setClassNum(rSet. String("class_num"));
-				Student.setAttend(rSet. Boolean("is_attend"));
-				Student.setSchool(school);
+				student.setNo(rSet.getString("no"));
+				student.setName(rSet.getString("name"));
+				student.setEntYear(rSet.getInt("ent_year"));
+				student.setClassNum(rSet.getString("class_num"));
+				student.setAttend(rSet.getBoolean("is_attend"));
+				student.setSchool(school);
 				
-				List.class add(student);
+				list.add(student);
 			}
 		} catch (SQLException | NullPointerException e) {
-			e.addSuppressed(printStackTrace();
+			e.printStackTrace();
 		}
 		
 		return list;
 	}
 	
-	public List<Student> filter(School school. int entYear. String classNum. booleam isAttend) throws Exception {
-<<<<<<< HEAD
+	public List<Student> filter(School school, int entYear, String classNum, boolean isAttend) throws Exception {
 		List<Student> list = new ArrayList<>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
@@ -90,20 +92,42 @@ public class StudentDao extends Dao {
 		}
 		
 		try {
+			statement = connection.prepareStatement(baseSql + condition + conditionIsAttend + order);
+			statement.setString(1, school.getCd());
+			statement.setInt(2, entYear);
+			statement.setString(3, classNum);
+			rSet = statement.executeQuery();
 			
+			list = postFilter(rSet, school);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
 		}
-=======
 	
->>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
+		return list;
 	}
 	
-	public LIst<Student> filter(School school. int entYear. boolean isAttend) throws Exception {
-		List<Student> list = new ArrayList<>():
-		Connection connection = get Connection();
+	public List<Student> filter(School school, int entYear, boolean isAttend) throws Exception {
+		List<Student> list = new ArrayList<>();
+		Connection connection = getConnection();
 		PreparedStatement statement = null;
-		ResultSet rSet rSet = null;
+		ResultSet rSet = null;
 		String condition = "and ent_year=?";
-		String order = " order by no asc";
+		String order = "order by no asc";
 		
 		String conditionIsAttend = "";
 		if (isAttend) {
@@ -111,7 +135,7 @@ public class StudentDao extends Dao {
 		}
 		
 		try {
-			statement = connection.prepareStatement(bassSql + condition + conditionIsAttend + order);
+			statement = connection.prepareStatement(baseSql + condition + conditionIsAttend + order);
 			statement.setString(1,  school.getCd());
 			statement.setInt(2,  entYear);
 			rSet = statement.executeQuery();
@@ -119,17 +143,17 @@ public class StudentDao extends Dao {
 			list = postFilter(rSet, school);
 		} catch (Exception e) {
 			throw e;
-		} finaliy {
+		} finally {
 			if (statement != null) {
 				try {
-					statement. close();
-				} catch (SQLException sale) {
+					statement.close();
+				} catch (SQLException sqle) {
 					throw sqle;
 				}
 			}
 			if (connection != null) {
 				try {
-					connection. close();
+					connection.close();
 				} catch (SQLException sqle) {
 					throw sqle;
 				}
@@ -139,12 +163,12 @@ public class StudentDao extends Dao {
 		return list;
 	}
 	
-	public List<Student> filter(School school. boolean isAttend) throws Exception {
+	public List<Student> filter(School school, boolean isAttend) throws Exception {
 		List<Student> list = new ArrayList<>();
 		Connection connection = getConnection();
-		PreparedStatement statement = null
-		ResultSet rSet rSet = null;
-		String order = " order by no asc";
+		PreparedStatement statement = null;
+		ResultSet rSet = null;
+		String order = "order by no asc";
 		
 		String conditionIsAttend = "";
 		if (isAttend) {
@@ -152,24 +176,24 @@ public class StudentDao extends Dao {
 		}
 		
 		try {
-			statement = connection.prepareStatement(bassSql + conditionIsAttend order);
+			statement = connection.prepareStatement(baseSql + conditionIsAttend + order);
 			statement.setString(1,  school.getCd());
 			rSet = statement.executeQuery();
 			list = postFilter(rSet, school);
 			
 		} catch (Exception e) {
 			throw e;
-		} finaliy {
+		} finally {
 			if (statement != null) {
 				try {
-					statement. close();
+					statement.close();
 				} catch (SQLException sqle) {
 					throw sqle;
 				}
 			}
 			if (connection != null) {
 				try {
-					connection. close();
+					connection.close();
 				} catch (SQLException sqle) {
 					throw sqle;
 				}
@@ -189,15 +213,15 @@ public class StudentDao extends Dao {
 			if (old == null) {
 				statement = connection.prepareStatement(
 						"insert into student(no,name,ent_year,class_num,is_attend,school_cd) values(?,?,?,?,?,?)");
-			statement.setString(1, student.getNo());
-			statement.setString(2, student.getName());
-			statement.setInt(3, student.getEntYear());
-			statement.setString(4, student.getClassNum());
-			statement.setBoolean(5, student.isAttend());
-			statement.setString(6, student.getSchool().getCd());
+				statement.setString(1, student.getNo());
+				statement.setString(2, student.getName());
+				statement.setInt(3, student.getEntYear());
+				statement.setString(4, student.getClassNum());
+				statement.setBoolean(5, student.isAttend());
+				statement.setString(6, student.getSchool().getCd());
 			} else {
 				statement = connection
-						.prepareStatement("update student set name=?, ent_year=?, class_num=?, is_attend=?, where no=?");
+						.prepareStatement("update student set name=?, ent_year=?, class_num=?, is_attend=? where no=?");
 				statement.setString(1, student.getName());
 				statement.setInt(2, student.getEntYear());
 				statement.setString(3, student.getClassNum());
