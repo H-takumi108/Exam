@@ -50,6 +50,7 @@
                  </div>
               </div>
            </div>
+           <a href="Logout.action">ログアウト</a> <%-- 仮置き --%>
          </section>
     </c:param>
 </c:import>
