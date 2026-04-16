@@ -23,9 +23,10 @@ public class LoginExecuteAction extends Action {
             session.setAttribute("id", id);
             request.getRequestDispatcher("main/menu.jsp")
 			.forward(request, response);
-        }
-        
-        request.getRequestDispatcher("error.jsp")
+
+        } else {
+        request.getRequestDispatcher("/error.jsp")
 		.forward(request, response);
+        }
     }
 }  

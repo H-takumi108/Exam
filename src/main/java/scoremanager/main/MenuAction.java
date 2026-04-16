@@ -5,9 +5,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import tool.Action;
 
 public class MenuAction extends Action {
-    public String execute(
+    public void execute(
         HttpServletRequest request, HttpServletResponse response
     ) throws Exception {
-    	return "/menu.jsp";
+    	request.getRequestDispatcher("/main/menu.jsp")
+		.forward(request, response);
     }
 }  
