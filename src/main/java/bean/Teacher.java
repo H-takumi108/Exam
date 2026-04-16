@@ -37,5 +37,5 @@ public class Teacher implements java.io.Serializable {
 	
 	public void setSchool(String school) {
 		this.school = school;
-	}
+	} 
 }    
