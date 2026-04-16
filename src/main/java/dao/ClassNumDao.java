@@ -87,14 +87,14 @@ public class ClassNumDao extends Dao {
    }
    
    
-   public boolean save(ClassNum classNum) throws Exception {
-	
-	
-   }
-
-
-   public boolean save(ClassNum String newClassNum) throws Exception {
-	
-	   
-   }
+//   public boolean save(classNum ClassNum) throws Exception {
+//	
+//	
+//   }
+//
+//
+//   public boolean save(ClassNum String newClassNum) throws Exception {
+//	
+//	   
+//   }
 }
