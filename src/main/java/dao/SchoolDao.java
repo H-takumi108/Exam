@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java. sql.ResultSet;
 import java.sql.SQLException;
-import java. sql.ResultSet; PreparedStatement;
-import java. sql.ResultSet; ResultSet;
-import java. sql.ResultSet;
 
 import bean.School;
 

@@ -1,6 +1,5 @@
 package dao;
 
-import java. beans. Statement;
 import java. sql. Connection;
 import java.sql.PreparedStatement;
 import java. sql. ResultSet;
@@ -15,16 +14,16 @@ public class ClassNumDao extends Dao {
    public ClassNum get(String class_num, School school) throws Exception {
 	   ClassNum classNum = new ClassNum();
 	   Connection connection = getConnection();
-	   PreparedStatement statment = null;
+	   PreparedStatement statement = null;
 	   try {
-		   statement = connection.prepareStatement("select * from class_num where class_num = ? and school_cd = ?");"
+		   statement = connection.prepareStatement("select * from class_num where class_num = ? and school_cd = ?");
 		   statement. setString(1, class_num);
 		   statement. setString(2, school.getCd());
-		   ResultSet rSet = Statement.executeQuery();
+		   ResultSet rSet = statement.executeQuery();
 		   SchoolDao sDao = new SchoolDao();
 		   if (rSet. next()) {
-			   classNum. equals(setClass_num(rSet. absolute(getString("class_num"));
-			   classNum. equals(setSchool(sDao. get(rSet. getString("school_cd")));
+			   classNum.setClass_num(rSet.getString("class_num"));
+			   classNum.setSchool(sDao. get(rSet. getString("school_cd")));
 		   } else {
 			   classNum = null;
 		   }
@@ -40,7 +39,7 @@ public class ClassNumDao extends Dao {
 		   }
 		   if (connection != null) {
 			   try {
-				   connection.abort(close();
+				   connection.close();
 			   } catch (SQLException sqle) {
 				   throw sqle;
 			   }
