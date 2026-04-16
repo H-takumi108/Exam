@@ -9,7 +9,7 @@
     <title>${param.title}</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .page-title {
@@ -34,7 +34,7 @@
     <header class="bg-white shadow-sm py-4 mb-4">
         <h1 class="page-title">${param.title}</h1>
         
-        <div class="float-end mt-2">
+        <div class="text-end mt-2">
            <span class="me-3">${sessionScope.userName} 様</span>
            <a href="Logout.action">ログアウト</a>
         </div>

@@ -15,7 +15,7 @@
             <div class="row justify-content-center text-center px-4 fs-3 my-5 g-4">
             
                <%-- 学生管理 --%>
-               <div class="col-md-3 col-6">
+               <div class="col-md-2 col-6">
                    <div class="d-flex align-items-center justify-content-center rounded shadow"
                    style="height: 10rem; background-color: #dbb;">
                    <a href="StudentList.action" class="text-dark fw-bold fs-3 text-decoration-none">学生管理</a>
@@ -23,7 +23,7 @@
                </div>
                
                <%-- 成績管理 --%>
-               <div class="col-md-3 col-6">
+               <div class="col-md-2 col-6">
                    <div class="d-flex flex-column align-items-center justify-content-center rounded shadow"
                         style="height: 10rem; background-color: #bdb;">
                    
@@ -35,7 +35,7 @@
                    </div>
               </div>
               <%-- 科目管理 --%>
-              <div class="col-md-3 col-6">
+              <div class="col-md-2 col-6">
                  <div class="d-flex align-items-center justify-content-center rounded shadow"
                   style="height: 10rem; background-color: #bbd;">
                   <a href="SubjectList.action" class="text-dark fw-bold fs-3 text-decoration-none">科目管理</a>
@@ -43,7 +43,7 @@
               </div>
               
               <%-- クラス管理 --%>
-              <div class="col-md-3 col-6">
+              <div class="col-md-2 col-6">
                  <div class="d-flex align-items-center justify-content-center rounded shadow"
                   style="height: 10rem; background-color: #ddb;">
                   <a href="ClassList.action" class="text-dark fw-bold fs-3 text-decoration-none">クラス管理</a>
