@@ -8,7 +8,7 @@ public class User {
 		return isAuthenticated;
 	}
 
-	public void setAuthenticated(boolean isisAuthenticated) {
-		this.isAuthenticated = isisAuthenticated;
+	public void setAuthenticated(boolean isAuthenticated) {
+		this.isAuthenticated = isAuthenticated;
 	}
 } 

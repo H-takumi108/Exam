@@ -21,7 +21,7 @@ public class StudentListAction extends Action {
     ) throws Exception {
     	HttpSession session = request.getSession();
     	Teacher teacher = (Teacher)session.getAttribute("user");
-    	
+
     	String entYearStr="";
     	String classNum = "";
     	String isAttendStr="";

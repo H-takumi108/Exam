@@ -20,7 +20,7 @@ public class LoginExecuteAction extends Action {
         Teacher teacher = dao.login(id, password);
 
         if (teacher != null) {
-            session.setAttribute("id", id);
+            session.setAttribute("user", teacher);
             res.sendRedirect("main/Menu.action");
         } else {
         req.getRequestDispatcher("/error.jsp")
