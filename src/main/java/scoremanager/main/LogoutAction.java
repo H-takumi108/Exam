@@ -6,17 +6,17 @@ import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
 public class LogoutAction extends Action {
-	public String execute(
+	public void execute(
 			HttpServletRequest request, HttpServletResponse response
 		) throws Exception {
 		
 		HttpSession session=request.getSession();
 		
-		if (session.getAttribute("customer")!=null) {
-			session.removeAttribute("customer");
-			return "xxxx.jsp"; 
+		if (session.getAttribute("id")!=null) {
+			session.removeAttribute("id");
+			request.getRequestDispatcher("login.jsp")
+			.forward(request, response);
 		}
 		
-		return "yyyyy.jsp";//エラー処理
 	}
 } 

@@ -5,13 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import bean.Student;
 
 public class StudentDao extends Dao {
 	
 	private String baseSql;
-	 
+	
 	public Student get(String no) throws Exception {
 		Student student = new Student();
 		Connection connection = getConnection();
@@ -29,7 +28,7 @@ public class StudentDao extends Dao {
 				student.setEntYear(rSet.getInt("ent_year"));
 				student.setClassNum(rSet.getString("class_num"));
 				student.setAttend(rSet.getBoolean("is_attend"));
-				
+				  
 				student.setSchool(schoolDao.get(r.set.getString("school_cd")));
 			} else {
 				student = null;
@@ -51,7 +50,7 @@ public class StudentDao extends Dao {
 					throw sqle;
 				}
 			}
-		}
+		}  
 		return student;
 	}
 	
@@ -77,6 +76,7 @@ public class StudentDao extends Dao {
 	}
 	
 	public List<Student> filter(School school. int entYear. String classNum. booleam isAttend) throws Exception {
+<<<<<<< HEAD
 		List<Student> list = new ArrayList<>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
@@ -92,6 +92,9 @@ public class StudentDao extends Dao {
 		try {
 			
 		}
+=======
+	
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 	}
 	
 	public LIst<Student> filter(School school. int entYear. boolean isAttend) throws Exception {

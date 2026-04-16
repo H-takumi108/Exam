@@ -21,11 +21,12 @@ public class LoginExecuteAction extends Action {
 
         if (teacher != null) {
             session.setAttribute("id", id);
-            request.getRequestDispatcher("menu.jsp")
+            request.getRequestDispatcher("main/menu.jsp")
 			.forward(request, response);
-        }
-        
-        request.getRequestDispatcher("error.jsp")
+
+        } else {
+        request.getRequestDispatcher("/error.jsp")
 		.forward(request, response);
+        }
     }
 }  

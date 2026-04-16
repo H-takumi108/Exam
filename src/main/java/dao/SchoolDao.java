@@ -1,15 +1,16 @@
 package dao;
 
 import java.sql.Connection;
-import java. sql.ResultSet; Connection;
+import java.sql.PreparedStatement;
+import java. sql.ResultSet;
+import java.sql.SQLException;
 import java. sql.ResultSet; PreparedStatement;
 import java. sql.ResultSet; ResultSet;
 import java. sql.ResultSet;
 
 import bean.School;
-import bean. school;
 
-public class School Dao extends. reparedStatement statement =Dao {
+public class SchoolDao extends Dao {
 	public School get(String cd) throws Exception {
 		School school = new School();
 		Connection connection = getConnection();
@@ -20,9 +21,9 @@ public class School Dao extends. reparedStatement statement =Dao {
 			statement. setString(1, cd);
 			ResultSet rSet = statement. executeQuery();
 			
-			if (rSet.absolute(next()) ) {
-				school. setCd(rSet. getString("cd"));
-				School. setName(rSet. getString("name"));
+			if (rSet.next()) {
+				school.setCd(rSet.getString("cd"));
+				school.setName(rSet.getString("name"));
 			} else {
 				school = null;
 			}
