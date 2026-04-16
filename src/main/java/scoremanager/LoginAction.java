@@ -6,9 +6,8 @@ import tool.Action;
 
 public class LoginAction extends Action {
     public void execute(
-        HttpServletRequest request, HttpServletResponse response
+        HttpServletRequest req, HttpServletResponse res
     ) throws Exception {
-    	request.getRequestDispatcher("login.jsp")
-		.forward(request, response);
+    	req.getRequestDispatcher("login.jsp").forward(req, res);
     }
 }  

@@ -5,6 +5,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public abstract class Action {
 	public abstract void execute(
-			HttpServletRequest request, HttpServletResponse response
+			HttpServletRequest req, HttpServletResponse res
 	) throws Exception; 
 }

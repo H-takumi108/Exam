@@ -9,24 +9,22 @@ import tool.Action;
 
 public class LoginExecuteAction extends Action {
     public void execute(
-        HttpServletRequest request, HttpServletResponse response
+        HttpServletRequest req, HttpServletResponse res
     ) throws Exception {
     	
-        HttpSession session = request.getSession();
+        HttpSession session = req.getSession();
 
-        String id = request.getParameter("id");
-        String password = request.getParameter("password");
+        String id = req.getParameter("id");
+        String password = req.getParameter("password");
         TeacherDAO dao = new TeacherDAO();
         Teacher teacher = dao.login(id, password);
 
         if (teacher != null) {
             session.setAttribute("id", id);
-            request.getRequestDispatcher("main/menu.jsp")
-			.forward(request, response);
-
+            res.sendRedirect("main/Menu.action");
         } else {
-        request.getRequestDispatcher("/error.jsp")
-		.forward(request, response);
+        req.getRequestDispatcher("/error.jsp")
+		.forward(req, res);
         }
     }
 }  
