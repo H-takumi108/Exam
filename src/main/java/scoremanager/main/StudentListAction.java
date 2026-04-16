@@ -41,6 +41,7 @@ public class StudentListAction extends Action {
     	if (entYearStr != null) {
     		entYear = Integer.parseInt(entYearStr);
     	}
+    	
     
     	List<Integer> entYearSet = new ArrayList<>();
     	for (int i = year -10;i < year + 1; i++) {
@@ -53,10 +54,10 @@ public class StudentListAction extends Action {
     		students = sDao.filter(teacher.getSchool(),entYear,classNum,isAttend);
     	} else if (entYear != 0 && classNum.equals("0")) {
     		students = sDao.filter(teacher.getSchool(),entYear,isAttend);
-    	} else if (entYear != 0 && classNum == null || entYear == 0 && classNum.equals("0")) {
+    	} else if (entYear == 0 && classNum == null || entYear == 0 && classNum.equals("0")) {
     		students = sDao.filter(teacher.getSchool(),isAttend);
     	} else {
-    		errors.put("f1", "クラスを指定する場合は入学年度を指定してください");
+       		errors.put("f1", "クラスを指定する場合は入学年度を指定してください");
     		request.setAttribute("errors", errors);
     		students = sDao.filter(teacher.getSchool(), isAttend);
     	}
@@ -73,7 +74,7 @@ public class StudentListAction extends Action {
     	request.setAttribute("class_num_set", list);
     	request.setAttribute("ent_year_set", entYearSet);
     	
-    	request.getRequestDispatcher("student_list_jps").forward(request, response);
+    	request.getRequestDispatcher("student_list.jsp").forward(request, response);
     		
     }
 }  
