@@ -21,7 +21,7 @@
                    <a href="StudentList.action" class="text-dark fw-bold fs-3 text-decoration-none">学生管理</a>
                    </div>
                </div>
-               
+                
                <%-- 成績管理 --%>
                <div class="col-md-3 col-6">
                    <div class="d-flex flex-column align-items-center justify-content-center rounded shadow"

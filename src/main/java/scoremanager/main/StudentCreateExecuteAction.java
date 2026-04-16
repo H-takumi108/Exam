@@ -18,7 +18,21 @@ public class StudentCreateExecuteAction extends Action {
     	String nameStr ="";
     	String classNumStr ="";
     	
-    	
-    	
+    	entYearStr = req.getParameter("entYearStr");
+    	noStr = req.getParameter("noStr");
+    	nameStr = req.getParameter("nameStr");
+    	classNumStr = req.getParameter("classNumStr");
+    
+    	if (noStr == null || noStr.trim().isEmpty()) {
+    	   pass
+    	} else if (nameStr == null || nameStr.trim().isEmpty()) {
+    	     pass
+    	}
+
+    	if () {
+    	    req.setAttribute("error", errorMessage);
+    	    req.getRequestDispatcher("student_create.jsp").forward(req, res);
+    	    return;
+    	}
         }
 }  

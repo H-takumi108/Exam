@@ -22,6 +22,35 @@
             display: inline-block;
             margin: 1rem 0;
         }
+        
+        
+    	#sidebar {
+        	position: fixed;
+        	top: 100px;
+        	left: 0;
+        	width: 200px;
+        	height: 100vh;
+        	padding: 10px;
+        	background-color: #f8f8f8;
+        	overflow-y: auto;
+    	}
+
+    	#sidebar ul {
+        	list-style: none;
+        	padding: 0;
+   	 	}
+
+    	#sidebar li {
+        	margin-bottom: 8px;
+    	}
+
+    	#sidebar a {
+        	text-decoration: none;
+    	}
+
+    	main {
+        	margin-left: 220px;
+    	}
     </style>
     
     ${param.scripts}
@@ -39,6 +68,12 @@
            <a href="Logout.action">ログアウト</a>
         </div>
     </header>
+    
+    <jsp:include page="/common/sidebar.jsp" />
+
+    <main class="container">
+        ${param.content}
+    </main>
     
     <main class="container">
         ${param.content}
