@@ -2,19 +2,22 @@ package dao;
 
 import java. beans. Statement;
 import java. sql. Connection;
+import java.sql.PreparedStatement;
 import java. sql. ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java. util. List;
 
 import bean. ClassNum;
 import bean. School;
 
 public class ClassNumDao extends Dao {
-   public ClassNum get(String class_num. School school) throws Exception {
+   public ClassNum get(String class_num, School school) throws Exception {
 	   ClassNum classNum = new ClassNum();
 	   Connection connection = getConnection();
 	   PreparedStatement statment = null;
 	   try {
-		   statement = connection.prepareStatement(salect * from class_num where class_num = ? and school_cd = ?");"
+		   statement = connection.prepareStatement("select * from class_num where class_num = ? and school_cd = ?");"
 		   statement. setString(1, class_num);
 		   statement. setString(2, school.getCd());
 		   ResultSet rSet = Statement.executeQuery();
@@ -30,9 +33,9 @@ public class ClassNumDao extends Dao {
 	   } finally {
 		   if (statement != null) {
 			   try {
-				   statement.class close();
+				   statement.close();
 			   } catch (SQLException sqle) {
-				   throw sqle
+				   throw sqle;
 			   }
 		   }
 		   if (connection != null) {
@@ -48,17 +51,18 @@ public class ClassNumDao extends Dao {
    }
 	
    public List<String> filter(School school) throws Exception {
-	   java.awt.List<String> list = new ArrayList<>();
+	   List<String> list = new ArrayList<>();
 	   Connection connection = getConnection();
 	   PreparedStatement statement = null;
 	   
 	   try {
 		   statement = connection
-				   prepereStatement('"select class_num where school_cd=? order by class_num');
-		   statement. setString(1, school.equals(getCd());)ResultSet rSet = statement. executQuery();
+				   .prepareStatement("select class_num where school_cd=? order by class_num");
+		   statement.setString(1, school.getCd());
+		   ResultSet rSet = statement.executeQuery();
 		   
-		   while (rSet.absolute(next()) {
-			   list.add(rSet.absolute(getString("class_num"));
+		   while (rSet.next()) {
+			   list.add(rSet.getString("class_num"));
 		   }
 	   } catch (Exception e) {
 		   throw e;
@@ -72,7 +76,7 @@ public class ClassNumDao extends Dao {
 		   }
 		   if (connection != null) {
 			   try {
-				   connnection. close();
+				   connection. close();
 			   } catch (SQLException sqle) {
 				   throw sqle;
 			   }
@@ -83,13 +87,13 @@ public class ClassNumDao extends Dao {
    }
    
    
-   public booleam save(ClassNum classNum) throws Exception {
+   public boolean save(ClassNum classNum) throws Exception {
 	
 	
    }
 
 
-   public booleam save(ClassNum. String newClassNum) throws Exception {
+   public boolean save(ClassNum String newClassNum) throws Exception {
 	
 	   
    }
