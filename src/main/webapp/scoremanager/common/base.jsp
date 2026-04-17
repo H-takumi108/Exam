@@ -9,7 +9,8 @@
     <title>${param.title}</title>
 
     <!-- Bootstrap -->
-    <link href="/ExamSystem/webapp/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
+
 	
     <style>
         .page-title {
@@ -48,7 +49,7 @@
         	text-decoration: none;
     	}
 
-    	main {
+    	#main {
         	margin-left: 220px;
     	}
     </style>
@@ -72,7 +73,7 @@
     <%-- <jsp:include page="/scoremanager/common/sidebar.jsp" /> --%>
 
     <main class="container" style="max-width: 900px;">
-        ${param.content}
+        <jsp:include page="${param.content}" />
     </main>
     
     <!-- フッター -->
@@ -81,7 +82,5 @@
         大原学園
     </footer>
 
-</body>
-</html>
 </body>
 </html>
