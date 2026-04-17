@@ -48,7 +48,7 @@
         	text-decoration: none;
     	}
 
-    	main {
+    	#main {
         	margin-left: 220px;
     	}
     </style>
