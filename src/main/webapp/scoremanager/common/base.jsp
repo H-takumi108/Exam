@@ -73,7 +73,7 @@
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
     <main class="container" style="max-width: 900px;">
-        ${param.content}
+        <jsp:include page="${param.content}" />
     </main>
     
     <!-- フッター -->
