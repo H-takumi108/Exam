@@ -1,7 +1,7 @@
 <%-- 学生一覧 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+    <%@ taglib prefix="C" uri="jakarta.tags.core"%>
 <c:import url="/common/base.jsp">
     <c:param name="title">
         得点管理システム
@@ -47,7 +47,7 @@
                 </div>
                 <div class="mt-2 text-warning">${errors.get("f1") }</div>
             </div>
-            </from>
+            </form>
             
             <c:choose>
                <c:when test="${students.size()>0 }">

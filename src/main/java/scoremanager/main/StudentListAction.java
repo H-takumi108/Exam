@@ -70,7 +70,7 @@ public class StudentListAction extends Action {
     		request.setAttribute("f3", isAttendStr);
     	}
     	
-    	request.setAttribute("student", students);
+    	request.setAttribute("students", students);
     	request.setAttribute("class_num_set", list);
     	request.setAttribute("ent_year_set", entYearSet);
     	
