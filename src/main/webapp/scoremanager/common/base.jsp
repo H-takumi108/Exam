@@ -64,7 +64,7 @@
         <h1 class="page-title">${param.title}</h1>
         
         <div class="text-end mt-2">
-           <span class="me-3">${sessionScope.userName} 様</span>
+           <span class="me-3">${sessionScope.user.name} 様</span>
            <a href="Logout.action">ログアウト</a>
         </div>
     </header>
