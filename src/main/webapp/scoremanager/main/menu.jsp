@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="/common/base.jsp">
+<c:import url="/scoremanager/common/base.jsp">
     <c:param name="title">
         得点管理システム
     </c:param>
@@ -40,14 +40,6 @@
                   style="height: 10rem; background-color: #bbd;">
                   <a href="SubjectList.action" class="text-dark fw-bold fs-3 text-decoration-none">科目管理</a>
                   </div>
-              </div>
-              
-              <%-- クラス管理 --%>
-              <div class="col-md-2 col-6">
-                 <div class="d-flex align-items-center justify-content-center rounded shadow"
-                  style="height: 10rem; background-color: #ddb;">
-                  <a href="ClassList.action" class="text-dark fw-bold fs-3 text-decoration-none">クラス管理</a>
-                 </div>
               </div>
            </div>
            <a href="Logout.action">ログアウト</a> <%-- 仮置き --%>
