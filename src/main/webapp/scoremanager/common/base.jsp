@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
     
 <!DOCTYPE html>
 <html lang="ja">
@@ -70,7 +70,7 @@
         </div>
     </header>
     
-    <jsp:include page="/scoremanager/common/sidebar.jsp" />
+    <%-- <jsp:include page="/scoremanager/common/sidebar.jsp" /> --%>
 
     <main class="container" style="max-width: 900px;">
         <jsp:include page="${param.content}" />
