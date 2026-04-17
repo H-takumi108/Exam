@@ -80,9 +80,23 @@ body {
 
 
         <form action="LoginExecute.action" method="post">
-            <p>ログイン名<input type="text" name="id"></p>
-            <p>パスワード<input type="password" name="password"></p>
-            <p><input type="submit" value="ログイン"></p>
+            <p>
+            	ログイン名
+            	<input type="text" name="id">
+            </p>
+            
+            <p>
+            	パスワード
+            	<input type="password" name="password">
+            </p>
+            
+            <p>
+        		<input type="checkbox" id="showPass"> パスワードを表示
+    		</p>
+            
+            <p>
+            	<input type="submit" value="ログイン">
+            </p>
         </form>
 
     </div>
