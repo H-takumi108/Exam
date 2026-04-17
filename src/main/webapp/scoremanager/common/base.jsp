@@ -9,7 +9,8 @@
     <title>${param.title}</title>
 
     <!-- Bootstrap -->
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
+
 	
     <style>
         .page-title {
