@@ -2,14 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="/scoremanager/common/base.jsp">
-    <c:param name="title">
-        得点管理システム
-    </c:param>
-    
-    <c:param name="scripts"></c:param>
-    
-    <c:param name="content">
+<%@ include file="/scoremanager/common/base.jsp" %>
+
+<section>
+    <h2>メニュー</h2>
+
         <section>
             <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">メニュー</h2>
             <div class="row justify-content-center text-center px-4 fs-3 my-5 g-4">
@@ -43,6 +40,4 @@
               </div>
            </div>
            <a href="Logout.action">ログアウト</a> <%-- 仮置き --%>
-         </section>
-    </c:param>
-</c:import>
+</section>

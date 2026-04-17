@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>${param.title}</title>
+    <h1 class="page-title">得点管理システム</h1>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
@@ -73,7 +73,6 @@
     <%-- <jsp:include page="/scoremanager/common/sidebar.jsp" /> --%>
 
     <main class="container" style="max-width: 900px;">
-        <jsp:include page="${param.content}" />
     </main>
     
     <!-- フッター -->
