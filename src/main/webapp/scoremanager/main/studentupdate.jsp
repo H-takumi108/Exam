@@ -7,7 +7,7 @@
 <p>学生番号</p>
 <p>${no}</p>
 <form action="StudentUpdateExecute.action" method="post">
-<input type="hidden" name="entYeatStr" value="${entYear}">
+<input type="hidden" name="entYearStr" value="${entYear}">
 <input type="hidden" name="noStr" value="${no}">
 <p>氏名</p>
 <p><input type="text" name="nameStr" value="${name}">${error1}</p>
