@@ -17,7 +17,7 @@
                    <label class="form-label">入学年度</label>
                    <select class="form-select" name="ent_year">
                        <c:forEach var="y" items="${yearList}">
-                           <option value="${y}">${y}</option>
+                           <option value="${ent_year}">${ent_year}</option>
                        </c:forEach>
                    </select>
                </div>
@@ -47,7 +47,7 @@
                    <label class="form-label">クラス</label>
                    <select name="class_num" class="form-select">
                        <c:forEach var="c" items="${classList}">
-                           <option value="${c}">${c}</option>
+                           <option value="${end}">${end}</option>
                        </c:forEach>
                    </select>
                </div>
