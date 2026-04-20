@@ -72,7 +72,7 @@ public class StudentUpdateExecuteAction extends Action {
     	    dao.save(student);
     	    
     	    //登録完了ページに移動
-    	    req.getRequestDispatcher("xxxxxx.jsp").forward(req, res);
+    	    req.getRequestDispatcher("student_update_done.jsp").forward(req, res);
     	}
     }
 }  
