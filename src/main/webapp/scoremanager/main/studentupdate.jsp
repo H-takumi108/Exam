@@ -23,6 +23,6 @@
 <% } %>
 ></p>
 <p><input type="submit" value="変更"></p>
-<a href="xxxxxx">戻る</a> <%-- 学生管理一覧に戻る --%>
+<a href="StudentList.action">戻る</a> <%-- 学生管理一覧に戻る --%>
 </form>
 
