@@ -23,7 +23,9 @@ public class LoginExecuteAction extends Action {
             session.setAttribute("user", teacher);
             res.sendRedirect("main/Menu.action");
         } else {
-        req.getRequestDispatcher("/error.jsp")
+        String message = "ログインに失敗しました。IDまたはパスワードが正しくありません。";
+        req.setAttribute("msg", message);
+        req.getRequestDispatcher("login.jsp")
 		.forward(req, res);
         }
     }
