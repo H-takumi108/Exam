@@ -5,7 +5,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
+=======
+    <meta charset="UTF-8">
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 
 <style>
 body {
@@ -13,12 +17,41 @@ body {
     background-color: #ffffff;
 }
 
+<<<<<<< HEAD
 /* ヘッダー */
 .header {
     background-color: #cfe2f3;
     padding: 20px;
     font-size: 26px;
     font-weight: bold;
+=======
+	
+    <style>
+         .page-title {
+             font-size: 2.2rem;
+             font-weight: bold;
+         }
+
+
+        .header-box {
+             border: 3px solid #7ecbff;
+             border-radius: 10px;
+             background-color: #e9f7ff;
+             padding: 0.8rem 1.5rem;
+         }
+        
+        
+    	#sidebar {
+        	position: fixed;
+        	top: 100px;
+        	left: 0;
+        	width: 200px;
+        	height: 100vh;
+        	padding: 10px;
+        	background-color: #f8f8f8;
+        	overflow-y: auto;
+    	}
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 
     display: flex;
     justify-content: space-between;
@@ -36,6 +69,7 @@ body {
     margin-right: 10px;
 }
 
+<<<<<<< HEAD
 /* メイン */
 .main {
     min-height: calc(100vh - 140px);
@@ -58,11 +92,35 @@ body {
     justify-content: space-between;
 }
 </style>
+=======
+    	#main {
+        	margin-left: 220px;
+    	}
+    </style>
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 
 </head>
 
+<<<<<<< HEAD
 <body>
+=======
+<body class="bg-light">
+    
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-sm py-4 mb-4">
+       <div class="header-box d-flex justify-content-between align-items-center">
+        <h1 class="page-title m-0">得点管理システム</h1>
+        
+        <div>
+           <span class="me-3">${sessionScope.user.name} 様</span>
+           <a href="Logout.action">ログアウト</a>
+        </div>
+    </header>
+    
+    <jsp:include page="/scoremanager/common/sidebar.jsp" />
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 
+<<<<<<< HEAD
 <!-- ヘッダー -->
 <div class="header">
     <div class="title">得点管理システム</div>
@@ -87,6 +145,17 @@ body {
     <span>© 2023 TIC</span>
     <span>大原学園</span>
 </div>
+=======
+    <main class="container" style="max-width: 900px;">
+    ${param.content}
+    </main>
+    
+    <!-- フッター -->
+<footer class="text-center text-muted py-3 mt-5">
+        © 2023 TIC
+        大原学園
+</footer>
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
 
 </body>
 </html>

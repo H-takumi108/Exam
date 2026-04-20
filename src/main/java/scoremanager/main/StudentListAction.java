@@ -42,6 +42,10 @@ public class StudentListAction extends Action {
     		entYear = Integer.parseInt(entYearStr);
     	}
     	
+    	if (isAttendStr != null) {
+    		isAttend = true;
+    		request.setAttribute("f3", isAttendStr);
+    	}
     
     	List<Integer> entYearSet = new ArrayList<>();
     	for (int i = year -10;i < year + 1; i++) {
@@ -64,11 +68,6 @@ public class StudentListAction extends Action {
     	
     	request.setAttribute("f1", entYear);
     	request.setAttribute("f2", classNum);
-    	
-    	if (isAttendStr != null) {
-    		isAttend = true;
-    		request.setAttribute("f3", isAttendStr);
-    	}
     	
     	request.setAttribute("students", students);
     	request.setAttribute("class_num_set", list);
