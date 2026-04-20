@@ -12,7 +12,11 @@
 <p>氏名</p>
 <p><input type="text" name="nameStr" value="${name}">${error1}</p>
 <p>クラス</p>
-<p><input type="text" name="classNumStr" value="${classNum}">${error2}</p>
+<select name="classNumStr">
+    <c:forEach var="c" items="${classList}">
+        <option value="${c}">${c}</option>
+    </c:forEach>
+</select>
 <p>在学中<input type="checkbox" name="attendStr"
 <% if ("on".equals(session.getAttribute("attend"))) { %>
     checked="checked"

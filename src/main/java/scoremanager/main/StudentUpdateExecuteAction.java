@@ -15,6 +15,8 @@ public class StudentUpdateExecuteAction extends Action {
     	HttpSession session = req.getSession();
     	Teacher teacher = (Teacher)session.getAttribute("user");
     	
+    	
+    	
     	//変数の定義
     	String entYearStr = "";
     	String noStr = "";
@@ -47,13 +49,7 @@ public class StudentUpdateExecuteAction extends Action {
     		//エラーを発生に変更
     	   error = true;
     	}
-    	//クラスが未入力
-    	if (classNumStr == null) {
-    		//jspに表示
-    		session.setAttribute("error2", "このフィードを入力して下さい");
-    		//エラーを発生に変更
-    	   error = true;
-    	}
+
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
