@@ -70,7 +70,7 @@
         </div>
     </header>
     
-    <%-- <jsp:include page="/scoremanager/common/sidebar.jsp" /> --%>
+    <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
     <main class="container" style="max-width: 900px;">
     ${param.content}
