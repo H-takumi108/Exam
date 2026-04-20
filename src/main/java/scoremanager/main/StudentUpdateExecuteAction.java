@@ -45,7 +45,7 @@ public class StudentUpdateExecuteAction extends Action {
     	//学生氏名が未入力なら
     	if (nameStr == null) {
     		//jspに表示
-    		session.setAttribute("error1", "このフィードを入力して下さい");
+    		req.setAttribute("error1", "このフィードを入力して下さい");
     		//エラーを発生に変更
     	   error = true;
     	}
