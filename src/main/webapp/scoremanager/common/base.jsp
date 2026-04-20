@@ -1,86 +1,92 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-    
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>${param.title}</title>
+<meta charset="UTF-8">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />">
+<style>
+body {
+    margin: 0;
+    background-color: #ffffff;
+}
 
-	
-    <style>
-        .page-title {
-            font-size: 2.2rem;
-            font-weight: bold;
-            border: 3px solid #7ecbff;
-            padding: 0.4rem 1.2rem;
-            border-radius: 10px;
-            background-color: #e9f7ff;
-            display: inline-block;
-            margin: 1rem 0;
-        }	
-        
-        
-    	#sidebar {
-        	position: fixed;
-        	top: 100px;
-        	left: 0;
-        	width: 200px;
-        	height: 100vh;
-        	padding: 10px;
-        	background-color: #f8f8f8;
-        	overflow-y: auto;
-    	}
+/* ヘッダー */
+.header {
+    background-color: #cfe2f3;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
 
-    	#sidebar ul {
-        	list-style: none;
-        	padding: 0;
-   	 	}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    	#sidebar li {
-        	margin-bottom: 8px;
-    	}
+/* タイトル（左） */
+.title {
+    margin-left: 10px;
+}
 
-    	#sidebar a {
-        	text-decoration: none;
-    	}
+/* ユーザー（右） */
+.user-area {
+    font-size: 14px;
+    margin-right: 10px;
+}
 
-    	#main {
-        	margin-left: 220px;
-    	}
-    </style>
-    
-    ${param.scripts}
+/* メイン */
+.main {
+    min-height: calc(100vh - 140px);
+}
+
+.no-footer-fix {
+    min-height: auto !important;
+}
+
+/* フッター */
+.footer {
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #666;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+</style>
 
 </head>
 
-<body class="bg-light">
-    
-    <!-- ヘッダー -->
-    <header class="bg-white shadow-sm py-4 mb-4">
-        <h1 class="page-title">${param.title}</h1>
-        
-        <div class="text-end mt-2">
-           <span class="me-3">${sessionScope.user.name} 様</span>
-           <a href="Logout.action">ログアウト</a>
-        </div>
-    </header>
-    
-    <%-- <jsp:include page="/scoremanager/common/sidebar.jsp" /> --%>
+<body>
 
-    <main class="container" style="max-width: 900px;">
+<!-- ヘッダー -->
+<div class="header">
+    <div class="title">得点管理システム</div>
+
+    <c:if test="${not empty sessionScope.user}">
+        <div class="user-area">
+            ${sessionScope.user.name} 様　
+            <a href="Logout.action">ログアウト</a>
+        </div>
+    </c:if>
+</div>
+
+<!-- メイン -->
+<div class="main ${param.layoutClass}">
+    <c:if test="${not empty param.content}">
         <jsp:include page="${param.content}" />
-    </main>
-    
-    <!-- フッター -->
-    <footer class="text-center text-muted py-3 mt-5">
-        © 2023 TIC
-        大原学園
-    </footer>
+    </c:if>
+</div>
+
+<!-- フッター -->
+<div class="footer">
+    <span>© 2023 TIC</span>
+    <span>大原学園</span>
+</div>
 
 </body>
 </html>
