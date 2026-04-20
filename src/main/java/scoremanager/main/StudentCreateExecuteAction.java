@@ -33,7 +33,7 @@ public class StudentCreateExecuteAction extends Action {
     	// 学生番号が未入力なら
     	if (noStr == null) {
     		//jspに表示
-    	   session.setAttribute("error1", "このフィードを入力して下さい");
+    	   req.setAttribute("error1", "このフィードを入力して下さい");
     	   //エラーを発生に変更
     	   error = true;
     	} else {
@@ -44,7 +44,7 @@ public class StudentCreateExecuteAction extends Action {
     	    //重複していたら
     	    if (student != null) {
     	    	//jspに表示
-    	        session.setAttribute("error1", "この学生番号が重複しています");
+    	        req.setAttribute("error1", "この学生番号が重複しています");
     	      //エラーを発生に変更
     	        error = true;
     	    }
@@ -52,14 +52,14 @@ public class StudentCreateExecuteAction extends Action {
     	//学生氏名が未入力なら
     	if (nameStr == null) {
     		//jspに表示
-    		session.setAttribute("error2", "このフィードを入力して下さい");
+    		req.setAttribute("error2", "このフィードを入力して下さい");
     		//エラーを発生に変更
     	   error = true;
     	}
     	//入学年度が未入力なら
     	if (entYearStr == null) {
     		//jspに表示
-    	    session.setAttribute("error3","入学年度を入力してください");
+    	    req.setAttribute("error3","入学年度を入力してください");
     	  //エラーを発生に変更
     	    error = true;
     	} else {
@@ -68,7 +68,7 @@ public class StudentCreateExecuteAction extends Action {
     	    	entYear = Integer.parseInt(entYearStr);
     	    } catch (NumberFormatException e) {
     	    	//jspに表示
-    	        session.setAttribute("error3", "入学年度は数字で入力してください");
+    	        req.setAttribute("error3", "入学年度は数字で入力してください");
     	      //エラーを発生に変更
     	        error = true;
     	    }
