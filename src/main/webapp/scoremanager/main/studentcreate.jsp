@@ -52,9 +52,18 @@
                    </select>
                </div>
                
+               <div class="text-start">
+                    <button class="btn btn-secondary">登録して終了</button>
+               </div>
+               
+               <div class="mt-3">
+                    <a href="StudentList.action">戻る</a>
+               </div>
+               
            </div>
        
        </section>
     
     
     </c:param>
+</c:import>
