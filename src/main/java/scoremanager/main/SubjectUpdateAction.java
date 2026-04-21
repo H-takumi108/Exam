@@ -24,6 +24,7 @@ public class SubjectUpdateAction extends Action {
     	    Subject subject = dao.get(cd,school);    
     	    
     	    //科目情報をセット
+    	    req.setAttribute("school_cd", school.getCd());
     	    req.setAttribute("cd", subject.getCd());
     	    req.setAttribute("name", subject.getName());
     	    
