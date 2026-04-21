@@ -15,17 +15,17 @@
 	               <!-- 学生番号 -->
 	               <div class="mb-3">
 	                   <label class="form-label">科目コード</label>
-	                   <input type="text" name="㏅" class="form-control"
+	                   <input type="text" name="cdStr" class="form-control"
 	                          maxlength="10"
 	                          placeholder="科目コードを入力してください"
-	                          value="${no}"
+	                          value="${cd}"
 	                          required>
 	               </div>
 	               
 	               <!-- 氏名 -->
 	               <div class="mb-3">
 	                   <label class="form-label">科目名</label>
-	                   <input type="text" name="name" class="form-control"
+	                   <input type="text" name="nameStr" class="form-control"
 	                          maxlength="30"
 	                          placeholder="科目名を入力してください"
 	                          value="${name }"
