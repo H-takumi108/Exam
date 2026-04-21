@@ -19,12 +19,12 @@
              <th>科目コード</th>
              <th>科目名</th>
           </tr>
-          <c:forEach var="sub" items="${subject }">
+          <c:forEach var="sub" items="${subjectlist }">
              <tr>
                 <td>${sub.cd }</td>
                 <td>${sub.name }</td>
-                <td><a href="SubjectUpdate.action?no=${sub.no }">変更</a></td>
-                <td><a href="SubjectDelete.action?no=${sub.no }">削除</a></td>
+                <td><a href="SubjectUpdate.action?no=${sub.cd }">変更</a></td>
+                <td><a href="SubjectDelete.action?no=${sub.cd }">削除</a></td>
              </tr>
           </c:forEach>
        </table>
