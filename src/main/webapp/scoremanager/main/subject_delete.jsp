@@ -10,7 +10,7 @@
                科目情報削除
            </h2>
            <p>「${name }(${cd })」を削除してもよろしいですか</p>
-           <form action="SubjectUpdateExecute.action" method="post">
+           <form action="SubjectDeleteExecute.action" method="post">
 	           <div class="container" style="max-width:600px;">
 	           	   <input type="hidden" name="cdStr" value="${cd }">
 	           	   <input type="hidden" name="nameStr" value="${name }">
