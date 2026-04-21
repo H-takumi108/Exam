@@ -76,7 +76,7 @@ public class StudentCreateExecuteAction extends Action {
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
-    		req.getRequestDispatcher("studentcreate.jsp").forward(req, res);
+    		req.getRequestDispatcher("student_create.jsp").forward(req, res);
     	}
     	//エラーが発生していなかったら
     	if (error == false) {

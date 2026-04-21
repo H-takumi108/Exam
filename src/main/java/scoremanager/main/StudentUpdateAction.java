@@ -40,6 +40,6 @@ public class StudentUpdateAction extends Action {
     	    }
     	
     	//フォワード
-        	req.getRequestDispatcher("studentupdate.jsp").forward(req, res);
+        	req.getRequestDispatcher("student_update.jsp").forward(req, res);
         }
 }  
