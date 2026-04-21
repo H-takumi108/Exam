@@ -20,7 +20,7 @@ public class SubjectListAction extends Action {
     	SubjectDao subjectdao = new SubjectDao();
     	List<Subject> list = subjectdao.filter(teacher.getSchool());
     	
-    	request.setAttribute("subjectlist",list );
+    	request.setAttribute("subjectlist",list );//名称かえるならここの左側
     	
     	request.getRequestDispatcher("subject_list.jsp").forward(request, response);
     	///jsp側では
@@ -28,5 +28,6 @@ public class SubjectListAction extends Action {
         //${subject.name}
         //</c:forEach>
     	//のように記述
+    	
     }
 }  
