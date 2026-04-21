@@ -51,7 +51,7 @@ public class SubjectCreateExecuteAction extends Action {
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
-    		req.getRequestDispatcher("subjectcreate.jsp").forward(req, res);
+    		req.getRequestDispatcher("subject_create.jsp").forward(req, res);
     		return;
     	}
     	//エラーが発生していなかったら
