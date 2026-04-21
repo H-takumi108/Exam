@@ -54,6 +54,7 @@ public class StudentUpdateExecuteAction extends Action {
     	if (error == true) {
     		//入力用のjspに戻る
     		req.getRequestDispatcher("student_update.jsp").forward(req, res);
+    		return;
     	}
     	//エラーが発生していなかったら
     	if (error == false) {
