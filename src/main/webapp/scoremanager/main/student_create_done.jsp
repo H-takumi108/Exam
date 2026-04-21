@@ -18,7 +18,7 @@
                 <a href="StudentCreate.action" class="me-3">
                     戻る
                 </a>
-                <a href="StudentList">
+                <a href="StudentList.action">
                     学生一覧
                 </a>
             </div>
