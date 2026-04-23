@@ -76,9 +76,9 @@
     </main>
     
     <!-- フッター -->
-<footer class="text-center text-muted py-3 mt-5">
-        © 2023 TIC
-        大原学園
+<footer class="text-center py-3 mt-5" style="background-color:#e9ecef; width:100%;">
+    © 2023 TIC<br>
+    大原学園
 </footer>
 
 </body>
