@@ -19,7 +19,6 @@
 
 
         .header-box {
-             border: 3px solid #7ecbff;
              border-radius: 10px;
              background-color: #e9f7ff;
              padding: 0.8rem 1.5rem;
@@ -72,7 +71,7 @@
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main class="container" style="max-width: 900px;">
+    <main class="container" style="max-width: 1200px;">
     ${param.content}
     </main>
     
