@@ -23,7 +23,14 @@
              background-color: #e9f7ff;
              padding: 0.8rem 1.5rem;
          }
-        
+         
+         .custom-success {
+             padding: 6px 12px;
+             font-size: 0.9rem;
+             background-color: #6fa88c;
+             border-color: #6fa88c;
+             border-radius: 0; 
+         }
         
     	#sidebar {
         	position: fixed;
