@@ -18,8 +18,8 @@
                 <a href="TestRegist.action" class="me-3">
                     戻る
                 </a>
-                <a href="StudentList.action">
-                    学生一覧
+                <a href="TestRegist.action">
+                    成績参照
                 </a>
             </div>
             

@@ -55,8 +55,8 @@
             </form>
             
 			<c:choose>
-				<c:when test="${students.size()>0 }">
-				<p>科目：${f3 }(${no })</p>
+				<c:when test="${test.size()>0 }">
+				<p>科目：${f3 }(${f4 })</p>
 					<form action="TestRegistExecute.action" method="post">
 						<table class="table table-hover">
 							<tr>
@@ -67,14 +67,14 @@
 								<th class="text-center">点数</th>
 							</tr>
 							
-							<c:forEach var="student" items="${students }">
+							<c:forEach var="test" items="${test }">
 								<tr>
-									<td><input type="hidden" name="entYearStr" value="${student.entYear}">${student.entYear }</td>
-									<td><input type="hidden" name="classNumStr" value="${student.classNum}">${student.classNum }</td>
-									<td><input type="hidden" name="noStr" value="${student.no}">${student.no }</td>
-									<td><input type="hidden" name="nameStr" value="${student.name}">${student.name }</td>
+									<td><input type="hidden" name="entYearStr" value="${test.student.entYear}">${test.student.entYear }</td>
+									<td><input type="hidden" name="classNumStr" value="${test.student.classNum}">${test.student.classNum }</td>
+									<td><input type="hidden" name="noStr" value="${test.student.no}">${test.student.no }</td>
+									<td><input type="hidden" name="nameStr" value="${test.student.name}">${test.student.name }</td>
 									<td class="text-center">
-										<input type="text" name="pointList" value="${student.point }">
+										<input type="text" name="pointList" value="${test.point }">
 									</td>
 								</tr>
 							</c:forEach>
