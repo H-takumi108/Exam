@@ -12,17 +12,17 @@ import bean.TestListStudent;
 
 public class TestListStudentDao extends Dao {
 
-	private String baseSql = "";
+	private String baseSql = "SELECT sub.name AS subject_name,t.subject_cd AS subject_cd,t.no,t.point FROM TEST t ";
 
 	public List<TestListStudent> postFilter(ResultSet rSet) throws Exception {
 		List<TestListStudent> list = new ArrayList<TestListStudent>();
 		try {
 			while (rSet.next()) {
 				TestListStudent tls = new TestListStudent();
-				tls.setSubjectName(rSet.getString("subjectName"));
-				tls.setSubjectCd("subjectCd");
-				tls.setNum(rSet.getInt("num"));
-				tls.setPoint(rSet.getInt("point"));;
+				tls.setSubjectName(rSet.getString("subject_name"));
+				tls.setSubjectCd(rSet.getString("subject_cd"));
+				tls.setNum(rSet.getInt("no"));
+				tls.setPoint(rSet.getInt("point"));
 				
 				list.add(tls);
 			}
@@ -37,25 +37,28 @@ public class TestListStudentDao extends Dao {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
-		String condition = "";
-		String order = "";
-		
-		String conditionIsAttend = "";
-		if () {
-			conditionIsAttend = "";
-		}
+		String join = "INNER JOIN SUBJECT sub ON t.subject_cd = sub.cd AND t.school_cd = sub.school_cd ";
+		String condition = "WHERE t.student_no = ? AND t.school_cd = ? ";
+		String order = "ORDER BY sub.name,t.no ";
 		
 		try {
-			statement = connection.prepareStatement();
-			statement.setInt(1, student.getEntYear());
-			statement.setString(2, student.getClassNum());
-			statement.setString(3, student.get);
+			statement = connection.prepareStatement(baseSql+join+condition+order);
+			statement.setString(1,student.getNo());
+			statement.setString(2,student.getSchool().getCd());
+
 			rSet = statement.executeQuery();
 			
-			list = postFilter(rSet, school);
+			list = postFilter(rSet);
 		} catch (Exception e) {
 			throw e;
 		} finally {
+			if (rSet != null) {
+			    try {
+			        rSet.close();
+			    } catch (SQLException e) {
+			        throw e;
+			    }
+			}
 			if (statement != null) {
 				try {
 					statement.close();
@@ -74,3 +77,4 @@ public class TestListStudentDao extends Dao {
 		return list;
 	}
 }
+

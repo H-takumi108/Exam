@@ -58,23 +58,5 @@ public class Student implements java.io.Serializable {
 		this.school = school;
 	}
 	
-//	-----------------------------成績用-----------------------------
-	private int num;
-	private int point;
-	
-	public int getNum() {
-		return num;
-	}
-	
-	public int getPoint() {
-		return point;
-	}
-	
-	public void setNum(int num) {
-		this.num = num;
-	}
-	
-	public void setPoint(int point) {
-		this.point = point;
-	}
+
 }
