@@ -8,7 +8,7 @@
 
     <c:param name="content">
         <section>
-            <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">メニュー</h2>
+            <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">メニュー</h2>
 
             <div class="row justify-content-center text-center px-4 fs-3 my-5 g-4">
 

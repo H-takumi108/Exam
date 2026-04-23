@@ -36,7 +36,7 @@
 				
 				<div class="mb-3">
 					<label class="form-label">クラス</label>
-					<select name="classNumStr">
+					<select name="classNumStr" class="form-select">
 						<c:forEach var="classNum" items="${classList}">
 							<option value="${classNum}">${classNum}</option>
 						</c:forEach>
@@ -51,7 +51,7 @@
 					<%} %>>
 				</div>
 				
-				<p><input type="submit" value="変更"></p>
+				<p><input type="submit" value="変更" class="btn btn-primary rounded-2 px-4"></p>
 				
 			</form>
 			

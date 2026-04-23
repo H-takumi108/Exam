@@ -19,12 +19,18 @@
 
 
         .header-box {
-             border: 3px solid #7ecbff;
-             border-radius: 10px;
+             border-radius: 0px;
              background-color: #e9f7ff;
              padding: 0.8rem 1.5rem;
          }
-        
+         
+         .custom-success {
+             padding: 6px 12px;
+             font-size: 0.9rem;
+             background-color: #6fa88c;
+             border-color: #6fa88c;
+             border-radius: 0; 
+         }
         
     	#sidebar {
         	position: fixed;
@@ -72,14 +78,14 @@
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main class="container" style="max-width: 900px;">
+    <main class="container-fluid px-5">
     ${param.content}
     </main>
     
     <!-- フッター -->
-<footer class="text-center text-muted py-3 mt-5">
-        © 2023 TIC
-        大原学園
+<footer class="text-center py-3 mt-5" style="background-color:#e9ecef; width:100%;">
+    © 2023 TIC<br>
+    大原学園
 </footer>
 
 </body>

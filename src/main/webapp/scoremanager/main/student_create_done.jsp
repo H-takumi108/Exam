@@ -7,9 +7,9 @@
     
     <c:param name="content">
         <section>
-            <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
+            <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
             
-            <div class="alert alert-success text-center">
+            <div class="alert alert-success text-center custom-success">
                 登録が完了しました。
             </div>
             

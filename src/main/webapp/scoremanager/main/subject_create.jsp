@@ -33,7 +33,7 @@
 	               </div>
 	               
 	               <div class="text-start">
-	                    <input type="submit" value="登録">
+	                    <input type="submit" value="登録" class="btn btn-primary rounded-2 px-4">
 	               </div>
 	               
                </form>
