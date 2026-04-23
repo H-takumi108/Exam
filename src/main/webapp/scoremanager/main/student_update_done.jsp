@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
@@ -23,3 +24,17 @@
         </section>
     </c:param>
 </c:import>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p>画面遷移しました</p>
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam

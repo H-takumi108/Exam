@@ -95,7 +95,7 @@ public class StudentCreateExecuteAction extends Action {
     	    dao.save(student);
     	    
     	    //登録完了ページに移動
-    	    req.getRequestDispatcher("xxxxxx.jsp").forward(req, res);
+    	    req.getRequestDispatcher("student_create_done.jsp").forward(req, res);
     	}
     }
 }  
