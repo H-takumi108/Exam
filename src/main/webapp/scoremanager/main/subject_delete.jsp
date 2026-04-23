@@ -11,16 +11,16 @@
            </h2>
            <p>「${name }(${cd })」を削除してもよろしいですか</p>
            <form action="SubjectDeleteExecute.action" method="post">
-	           <div class="container" style="max-width:600px;">
+	           <div class="text-start" style="max-width:600px;">
 	           	   <input type="hidden" name="cdStr" value="${cd }">
 	           	   <input type="hidden" name="nameStr" value="${name }">
 	               <div class="text-start">
-	                    <input type="submit" value="削除">
-	               </div>
+	                    <input type="submit" value="削除" class="btn btn-danger">
+	           </div>
 	               
                </form>
                
-               <div class="mt-3">
+               <div class="mt-5">
                     <a href="SubjectList.action">戻る</a>
                </div>
                
