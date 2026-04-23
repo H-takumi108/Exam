@@ -1,0 +1,80 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.Student;
+import bean.TestListStudent;
+
+public class TestListStudentDao extends Dao {
+
+	private String baseSql = "SELECT sub.name AS subject_name,t.subject_cd AS subject_cd,t.no,t.point FROM TEST t ";
+
+	public List<TestListStudent> postFilter(ResultSet rSet) throws Exception {
+		List<TestListStudent> list = new ArrayList<TestListStudent>();
+		try {
+			while (rSet.next()) {
+				TestListStudent tlstu = new TestListStudent();
+				tlstu.setSubjectName(rSet.getString("subject_name"));
+				tlstu.setSubjectCd(rSet.getString("subject_cd"));
+				tlstu.setNum(rSet.getInt("no"));
+				tlstu.setPoint(rSet.getInt("point"));
+				
+				list.add(tlstu);
+			}
+		} catch (SQLException | NullPointerException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public List<TestListStudent> filter(Student student) throws Exception {
+		List<TestListStudent> list = new ArrayList<TestListStudent>();
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		ResultSet rSet = null;
+		String join = "INNER JOIN SUBJECT sub ON t.subject_cd = sub.cd AND t.school_cd = sub.school_cd ";
+		String condition = "WHERE t.student_no = ? AND t.school_cd = ? ";
+		String order = "ORDER BY sub.name,t.no ";
+		
+		try {
+			statement = connection.prepareStatement(baseSql+join+condition+order);
+			statement.setString(1,student.getNo());
+			statement.setString(2,student.getSchool().getCd());
+
+			rSet = statement.executeQuery();
+			
+			list = postFilter(rSet);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (rSet != null) {
+			    try {
+			        rSet.close();
+			    } catch (SQLException e) {
+			        throw e;
+			    }
+			}
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		}
+		return list;
+	}
+}
+

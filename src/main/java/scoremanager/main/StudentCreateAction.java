@@ -37,7 +37,7 @@ public class StudentCreateAction extends Action {
         	req.setAttribute("ent_year_set", entYearSet);
     	
     	
-        	req.getRequestDispatcher("studentcreate.jsp").forward(req, res);
+        	req.getRequestDispatcher("student_create.jsp").forward(req, res);
         }
 }
 

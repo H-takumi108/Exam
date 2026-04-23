@@ -60,7 +60,6 @@
                         <th>クラス</th>
                         <th class="text-center">在学中</th>
                         <th></th>
-                        <th></th>
                      </tr>
                      <c:forEach var="student" items="${students }">
                         <tr>

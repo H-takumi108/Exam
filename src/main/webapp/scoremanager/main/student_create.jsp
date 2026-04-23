@@ -9,7 +9,7 @@
            <h2 class="h3 mb-4 bg-secondary bg-opacity-10 py-2 px-4">
                学生情報登録
            </h2>
-           <form action="StudentCreateExecute.action" method="post>
+           <form action="StudentCreateExecute.action" method="post">
 	           <div class="container" style="max-width:600px;">
 	               
 	               <!-- 入学年度 -->
@@ -25,7 +25,7 @@
 	               <!-- 学生番号 -->
 	               <div class="mb-3">
 	                   <label class="form-label">学生番号</label>
-	                   <input type="text" name="no" class="form-control"
+	                   <input type="text" name="noStr" class="form-control"
 	                          maxlength="10"
 	                          placeholder="学生番号を入力してください"
 	                          value="${no}"
@@ -35,7 +35,7 @@
 	               <!-- 氏名 -->
 	               <div class="mb-3">
 	                   <label class="form-label">氏名</label>
-	                   <input type="text" class="form-control"
+	                   <input type="text" name="nameStr" class="form-control"
 	                          maxlength="30"
 	                          placeholder="氏名を入力してください"
 	                          value="${name }"
@@ -69,6 +69,3 @@
     
     </c:param>
 </c:import>
-
-
-<%-- エラー、登録不可能、エラーで画面遷移後、年度およびクラスが非表示 --%>

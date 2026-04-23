@@ -8,19 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.School;
-import bean.Student;
 import bean.Subject;
 
 public class SubjectDao extends Dao {
 	
-	private String baseSql = "select * from student where school_cd=? ";
 	
-	public Subject get(String cd, School school) throws Exception {
+	public Subject get(String cd,School school) throws Exception {
 	    Connection connection = getConnection();
 	    PreparedStatement statement = null;
 	    ResultSet rSet = null;
 
-	    Subject subject = new Subject();
 	    try {
 	        statement = connection.prepareStatement(
 	            "select * from subject where cd = ? and school_cd = ?"
@@ -31,19 +28,24 @@ public class SubjectDao extends Dao {
 	        rSet = statement.executeQuery();
 	        
 	        
+	        Subject subject = null;
+
 	        if (rSet.next()) {
-	            
+	            subject = new Subject();
 	            subject.setCd(rSet.getString("cd"));
 	            subject.setName(rSet.getString("name"));
 
 	            School sch = new School();
 	            sch.setCd(rSet.getString("school_cd"));
 	            subject.setSchool(sch);
-	        
-	        } 
+	        }
+	        return subject;
 	    } catch (Exception e) {
 			throw e;
 		} finally {
+			if (rSet != null) {
+			    rSet.close();
+			}
 			if (statement != null) {
 				try {
 					statement.close();
@@ -59,34 +61,36 @@ public class SubjectDao extends Dao {
 				}
 			}
 		}
-	        return subject;
 	}
 	
 	
-	public List<Student> filter(School school, int entYear, String classNum, boolean isAttend) throws Exception {
-		List<Student> list = new ArrayList<>();
+	public List<Subject> filter(School school) throws Exception {
+		List<Subject> list = new ArrayList<>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
-		ResultSet rSet = null;
-		String condition = "and ent_year=? and class_num=? ";
-		String order = "order by no asc";
-		
-		String conditionIsAttend = "";
-		if (isAttend) {
-			conditionIsAttend = "and is_attend=true ";
-		}
-		
+		ResultSet rs = null;
 		try {
-			statement = connection.prepareStatement(baseSql + condition + conditionIsAttend + order);
+			statement = connection.prepareStatement("select name,cd from subject where school_cd = ?");
 			statement.setString(1, school.getCd());
-			statement.setInt(2, entYear);
-			statement.setString(3, classNum);
-			rSet = statement.executeQuery();
 			
-			list = postFilter(rSet, school);
+			rs = statement.executeQuery();
+			
+			while(rs.next()) {
+				Subject subject = new Subject();
+				subject.setSchool(school);
+				subject.setCd(rs.getString("cd"));
+				subject.setName(rs.getString("name"));
+				
+				
+				list.add(subject);
+			}
+			
 		} catch (Exception e) {
 			throw e;
 		} finally {
+			if (rs != null) {
+			    rs.close();
+			}
 			if (statement != null) {
 				try {
 					statement.close();
@@ -108,31 +112,66 @@ public class SubjectDao extends Dao {
 	
 	
 	
-	public boolean save(Student student) throws Exception {
+	public boolean save(Subject subject) throws Exception {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		int count = 0;
 		
 		try {
-			Student old = get(student.getNo());
+			Subject old = get(subject.getCd(),subject.getSchool());
 			if (old == null) {
 				statement = connection.prepareStatement(
-						"insert into student(no,name,ent_year,class_num,is_attend,school_cd) values(?,?,?,?,?,?)");
-				statement.setString(1, student.getNo());
-				statement.setString(2, student.getName());
-				statement.setInt(3, student.getEntYear());
-				statement.setString(4, student.getClassNum());
-				statement.setBoolean(5, student.isAttend());
-				statement.setString(6, student.getSchool().getCd());
+						"insert into subject(school_cd,cd,name) values(?,?,?)");
+				
+				statement.setString(1, subject.getSchool().getCd());
+				statement.setString(2, subject.getCd());
+				statement.setString(3, subject.getName());
 			} else {
 				statement = connection
-						.prepareStatement("update student set name=?, ent_year=?, class_num=?, is_attend=? where no=?");
-				statement.setString(1, student.getName());
-				statement.setInt(2, student.getEntYear());
-				statement.setString(3, student.getClassNum());
-				statement.setBoolean(4, student.isAttend());
-				statement.setString(5, student.getNo());
+						.prepareStatement("update subject set name=? where school_cd = ? and cd = ?");
+				statement.setString(1, subject.getName());
+				statement.setString(2, subject.getSchool().getCd());
+				statement.setString(3, subject.getCd());
 			}
+			count = statement.executeUpdate();
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+			
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException sqle) {
+					throw sqle;
+				}
+			}
+		} 
+		
+		if (count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	} 
+	
+	
+	public boolean delete(Subject subject) throws Exception {
+		Connection connection = getConnection();
+		PreparedStatement statement = null;
+		int count = 0;
+		
+		try {
+			statement = connection.prepareStatement(
+					"delete from subject where school_cd = ? and cd = ?");
+			statement.setString(1, subject.getSchool().getCd());
+			statement.setString(2, subject.getCd());
 			count = statement.executeUpdate();
 		} catch (Exception e) {
 			throw e;
