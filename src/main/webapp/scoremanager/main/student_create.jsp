@@ -15,7 +15,7 @@
 	               <!-- 入学年度 -->
 	               <div class="mb-3">
 	                   <label class="form-label">入学年度</label>
-	                  <select name="entYearStr">
+	                  <select name="entYearStr" class="form-select">
 	    					<c:forEach var="year" items="${ent_year_set}">
 	     			   		<option value="${year}">${year}</option>
 	   					 </c:forEach>
@@ -45,7 +45,7 @@
 	               <!-- クラス -->
 	               <div class="mb-4">
 	                   <label class="form-label">クラス</label>
-	                   <select name="classNumStr">
+	                   <select name="classNumStr" class="form-select">
 	   						 <c:forEach var="classNum" items="${classList}">
 	      					  <option value="${classNum}">${classNum}</option>
 	   					 </c:forEach>
@@ -53,7 +53,7 @@
 	               </div>
 	               
 	               <div class="text-start">
-	                    <input type="submit" value="登録して終了">
+	                    <input type="submit" value="登録して終了" class="btn btn-secondary rounded-2 px-4">
 	               </div>
 	               
                </form>
