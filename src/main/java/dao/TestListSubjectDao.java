@@ -9,22 +9,23 @@ import java.util.List;
 
 import bean.Student;
 import bean.TestListStudent;
+import bean.TestListSubject;
 
-public class TestListStudentDao extends Dao {
+public class TestListSubjectDao extends Dao {
 
 	private String baseSql = "SELECT sub.name AS subject_name,t.subject_cd AS subject_cd,t.no,t.point FROM TEST t ";
 
-	public List<TestListStudent> postFilter(ResultSet rSet) throws Exception {
-		List<TestListStudent> list = new ArrayList<TestListStudent>();
+	public List<TestListSubject> postFilter(ResultSet rSet) throws Exception {
+		List<TestListSubject> list = new ArrayList<TestListSubject>();
 		try {
 			while (rSet.next()) {
-				TestListStudent tlstu = new TestListStudent();
-				tlstu.setSubjectName(rSet.getString("subject_name"));
-				tlstu.setSubjectCd(rSet.getString("subject_cd"));
-				tlstu.setNum(rSet.getInt("no"));
-				tlstu.setPoint(rSet.getInt("point"));
+				TestListSubject tlsub = new TestListSubject();
+				tls.set(rSet.getString("subject_name"));
+				tls.setSubjectCd(rSet.getString("subject_cd"));
+				tls.setNum(rSet.getInt("no"));
+				tls.setPoint(rSet.getInt("point"));
 				
-				list.add(tlstu);
+				list.add(tls);
 			}
 		} catch (SQLException | NullPointerException e) {
 			e.printStackTrace();
