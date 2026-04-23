@@ -7,25 +7,41 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Student;
-import bean.TestListStudent;
+import bean.School;
+import bean.Subject;
 import bean.TestListSubject;
+
 
 public class TestListSubjectDao extends Dao {
 
-	private String baseSql = "SELECT sub.name AS subject_name,t.subject_cd AS subject_cd,t.no,t.point FROM TEST t ";
+	private String baseSql = 
+			"SELECT s.ent_year,s.class_num,s.no AS student_no,s.name AS student_name,t.no AS test_no,t.point FROM student s ";
 
 	public List<TestListSubject> postFilter(ResultSet rSet) throws Exception {
 		List<TestListSubject> list = new ArrayList<TestListSubject>();
+		
 		try {
+			TestListSubject tlsub = null;
+			String stubaseNo = null;
+			
 			while (rSet.next()) {
-				TestListSubject tlsub = new TestListSubject();
-				tls.set(rSet.getString("subject_name"));
-				tls.setSubjectCd(rSet.getString("subject_cd"));
-				tls.setNum(rSet.getInt("no"));
-				tls.setPoint(rSet.getInt("point"));
+				String stuNo = rSet.getString("student_no");
 				
-				list.add(tls);
+				if(stubaseNo == null || !stuNo.equals(stubaseNo)) {
+					tlsub = new TestListSubject();
+					tlsub.setEntYear(rSet.getInt("ent_year"));
+					tlsub.setClassNum(rSet.getString("class_num"));
+					tlsub.setStudentNo(rSet.getString("student_no"));
+					tlsub.setStudentName(rSet.getString("student_name"));
+					tlsub.setPoint(new java.util.HashMap<>());
+					
+					list.add(tlsub);
+					stubaseNo = stuNo;
+				}
+				int testNo = rSet.getInt("test_no");
+		        int point = rSet.getInt("point");
+
+		        tlsub.putPoint(testNo, point);
 			}
 		} catch (SQLException | NullPointerException e) {
 			e.printStackTrace();
@@ -33,19 +49,21 @@ public class TestListSubjectDao extends Dao {
 		return list;
 	}
 	
-	public List<TestListStudent> filter(Student student) throws Exception {
-		List<TestListStudent> list = new ArrayList<TestListStudent>();
+	public List<TestListSubject> filter(int entYear,String classNum,Subject subject,School school) throws Exception {
+		List<TestListSubject> list = new ArrayList<TestListSubject>();
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
-		String join = "INNER JOIN SUBJECT sub ON t.subject_cd = sub.cd AND t.school_cd = sub.school_cd ";
-		String condition = "WHERE t.student_no = ? AND t.school_cd = ? ";
-		String order = "ORDER BY sub.name,t.no ";
+		String join = "INNER JOIN test t ON s.no = t.student_no AND s.school_cd = t.school_cd";
+		String condition = "WHERE s.ent_year = ? AND s.class_num = ? AND t.subject_cd = ? AND s.school_cd = ?";
+		String order = "ORDER BY s.no,t.no";
 		
 		try {
 			statement = connection.prepareStatement(baseSql+join+condition+order);
-			statement.setString(1,student.getNo());
-			statement.setString(2,student.getSchool().getCd());
+			statement.setInt(1,entYear);
+			statement.setString(2,classNum);
+			statement.setString(3,subject.getCd());
+			statement.setString(4,school.getCd());
 
 			rSet = statement.executeQuery();
 			
