@@ -12,7 +12,7 @@
 		<h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">成績参照</h2>
 		
 			<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
-				<form action="" method="post">
+				<form action="TestSubjectExecute.action" method="post">
 					<div class="row align-items-end mb-3">
 					<form action="" method="post">
 						<div class="col-2 fw-bold text-center align-self-center">
@@ -53,7 +53,7 @@
 				
 				<hr>
 				
-				<form action="" method="post">
+				<form action="TestStudentExecute.action" method="post">
 					<div class="row align-items-end">
 						<div class="col-2 fw-bold text-center align-self-center">
 							<label>学生情報</label>
