@@ -74,6 +74,8 @@
 }
 </style>
 
+<p>${msg }</p><%-- 追加部分 --%>
+
 <div class="login-box">
     <div class="login-title">ログイン</div>
 

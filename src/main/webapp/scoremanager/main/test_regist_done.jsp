@@ -7,19 +7,19 @@
     
     <c:param name="content">
         <section>
-            <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
+            <h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">成績管理</h2>
             
-            <div class="alert alert-success text-center custom-success">
+            <div class="alert alert-success text-center">
                 登録が完了しました。
             </div>
             
             
             <div class="mt-4">
-                <a href="StudentCreate.action" class="me-3">
+                <a href="TestRegist.action" class="me-3">
                     戻る
                 </a>
-                <a href="StudentList.action">
-                    学生一覧
+                <a href="TestRegist.action">
+                    成績参照
                 </a>
             </div>
             

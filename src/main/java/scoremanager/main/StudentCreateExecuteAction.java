@@ -76,7 +76,8 @@ public class StudentCreateExecuteAction extends Action {
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
-    		req.getRequestDispatcher("studentcreate.jsp").forward(req, res);
+    		req.getRequestDispatcher("student_create.jsp").forward(req, res);
+    		return;
     	}
     	//エラーが発生していなかったら
     	if (error == false) {
@@ -95,7 +96,7 @@ public class StudentCreateExecuteAction extends Action {
     	    dao.save(student);
     	    
     	    //登録完了ページに移動
-    	    req.getRequestDispatcher("xxxxxx.jsp").forward(req, res);
+    	    req.getRequestDispatcher("student_create_done.jsp").forward(req, res);
     	}
     }
 }  

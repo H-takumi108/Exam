@@ -27,7 +27,7 @@ public class StudentUpdateAction extends Action {
     	    req.setAttribute("classList", classList);
     	    
     	    
-    	    //学生情報をセッション
+    	    //学生情報をセット
     	    req.setAttribute("entYear", student.getEntYear());
     	    req.setAttribute("no", student.getNo());
     	    req.setAttribute("name", student.getName());
@@ -40,6 +40,6 @@ public class StudentUpdateAction extends Action {
     	    }
     	
     	//フォワード
-        	req.getRequestDispatcher("studentupdate.jsp").forward(req, res);
+        	req.getRequestDispatcher("student_update.jsp").forward(req, res);
         }
 }  

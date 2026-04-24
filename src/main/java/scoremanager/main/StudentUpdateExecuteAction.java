@@ -53,7 +53,8 @@ public class StudentUpdateExecuteAction extends Action {
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
-    		req.getRequestDispatcher("studentupdate.jsp").forward(req, res);
+    		req.getRequestDispatcher("student_update.jsp").forward(req, res);
+    		return;
     	}
     	//エラーが発生していなかったら
     	if (error == false) {
@@ -72,7 +73,7 @@ public class StudentUpdateExecuteAction extends Action {
     	    dao.save(student);
     	    
     	    //登録完了ページに移動
-    	    req.getRequestDispatcher("xxxxxx.jsp").forward(req, res);
+    	    req.getRequestDispatcher("student_update_done.jsp").forward(req, res);
     	}
     }
 }  

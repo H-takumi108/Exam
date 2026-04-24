@@ -7,7 +7,7 @@
     
     <c:param name="content">
         <section>
-            <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
+            <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">科目情報登録</h2>
             
             <div class="alert alert-success text-center custom-success">
                 登録が完了しました。
@@ -15,11 +15,11 @@
             
             
             <div class="mt-4">
-                <a href="StudentCreate.action" class="me-3">
+                <a href="SubjectCreate.action" class="me-3">
                     戻る
                 </a>
-                <a href="StudentList.action">
-                    学生一覧
+                <a href="SubjectList.action">
+                    科目一覧
                 </a>
             </div>
             
