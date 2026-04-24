@@ -85,12 +85,12 @@
 
         <div class="input-group">
             <span class="input-label">ID</span>
-            <input type="text" name="id" value="${param.id}">
+            <input type="text" name="id" value="${param.id}" required>
         </div>
 
         <div class="input-group">
             <span class="input-label">パスワード</span>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
         </div>
 
         <p class="checkbox-area">
