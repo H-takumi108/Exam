@@ -62,6 +62,14 @@
     border: none;
     border-radius: 6px;
 }
+
+.login-error {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
 </style>
 
 <div class="login-box">
@@ -70,7 +78,7 @@
     <form action="<c:url value='/scoremanager/LoginExecute.action' />" method="post">
 
         <c:if test="${not empty msg}">
-            <p style="color:#000; text-align:center; margin-bottom:10px;">
+            <p class="login-error">
                 ${msg}
             </p>
         </c:if>
