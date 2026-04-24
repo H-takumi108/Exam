@@ -74,7 +74,7 @@
 			</div>
             
 		<c:choose>
-			<c:when test="${students.size() == 0}">
+			<c:when test="${tlst.size() == 0}">
 				<p>学生情報が存在しませんでした。</p>
 			</c:when>
 			

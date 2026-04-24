@@ -12,7 +12,7 @@
 		<h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">成績一覧（学生）</h2>
 		
 		<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
-				<form action="TestSubjectExecute.action" method="post">
+				<form action="TestListSubjectExecute.action" method="post">
 					<div class="row align-items-end mb-3">
 					<form action="" method="post">
 						<div class="col-2 fw-bold text-center align-self-center">
@@ -53,7 +53,7 @@
 				
 				<hr>
 				
-				<form action="TestStudentExecute.action" method="post">
+				<form action="TestListStudentExecute.action" method="post">
 					<div class="row align-items-end">
 						<div class="col-2 fw-bold text-center align-self-center">
 							<label>学生情報</label>
@@ -73,31 +73,37 @@
 			</div>
             
 		<c:choose>
-			<c:when test="${students.size()>0 }">
-			<p>氏名：${student.name }(${f4 })</p>
-				<table class="table table-hover">
-					<tr>
-						<th>科目名</th>
-						<th>科目コード</th>
-						<th>回数</th>
-						<th>点数</th>
-					</tr>
-					
-					<c:forEach var="student" items="${students }">
+			<c:when test="${tlsub.size()>0 }">
+				<p>科目：${f3 }</p>
+				<form action="TestRegistExecute.action" method="post">
+					<table class="table table-hover">
 						<tr>
-							<td>${subject.name }</td>
-							<td>${subject.cd }</td>
-							<td></td>
-							<td>${student.point }</td>
+							<th>入学年度</th>
+							<th>クラス</th>
+							<th>学籍番号</th>
+							<th>氏名</th>
+							<th class="text-center">${tlsub.test_no }回</th>
+							<th class="text-center">${tlsub.test_no }回</th>
 						</tr>
-					</c:forEach>
-				</table>
-				<div class="mt-3">
-					<input type="submit" value="登録して終了">
-				</div>
+						
+						<c:forEach var="student" items="${tlst }">
+							<tr>
+								<td>${f1 }</td>
+								<td>${f2 }</td>
+								<td>${tlsub.student_no }</td>
+								<td>${tlsub.student_name }</td>
+								<td>${tlsub.point }</td>
+								<td>${tlsub.point }</td>
+							</tr>
+						</c:forEach>
+					</table>
+					<div class="mt-3">
+						<input type="submit" value="登録して終了">
+					</div>
+				</form>
 			</c:when>
 			
-			<c:when test="${students.size() == 0}">
+			<c:when test="${tlsub.size() == 0}">
 				<p>成績情報が存在しませんでした。</p>
 			</c:when>
 			
