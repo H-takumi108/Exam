@@ -50,6 +50,15 @@
     
 }
 
+.field-error {
+    font-size: 12px;
+    margin-top: 3px;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    color: #000;
+    display: none;
+}
+
 .checkbox-area {
     text-align: center;
 }
@@ -63,11 +72,6 @@
     border: none;
     border-radius: 6px;
 }
-
-.error {
-    color: red;
-    text-align: center;
-}
 </style>
 
 <div class="login-box">
@@ -77,16 +81,30 @@
         <div class="error">${error}</div>
     </c:if>
 
-    <form action="LoginExecute.action" method="post">
+    <form action="<c:url value='/scoremanager/LoginExecute.action' />"
+      method="post"
+      onsubmit="return checkForm()">
+
+		 <c:if test="${not empty msg}">
+            <p style="color:#000; text-align:center; margin-bottom:10px;">
+                ${msg}
+            </p>
+        </c:if>
 
         <div class="input-group">
             <span class="input-label">ID</span>
-            <input type="text" name="id" value="${param.id}">
-        </div>
+            <input type="text" name="id" id="id" value="${param.id}">
+            <div class="field-error" id="idError">
+            	このフィールドを入力してください。
+            </div>
+		</div>
 
         <div class="input-group">
             <span class="input-label">パスワード</span>
             <input type="password" name="password" id="password">
+            <div class="field-error" id="passError">
+            	このフィールドを入力してください。
+            </div>
         </div>
 
         <p class="checkbox-area">
@@ -101,6 +119,31 @@
 </div>
 
 <script>
+function checkForm() {
+    let ok = true;
+
+    const id = document.getElementById("id");
+    const pass = document.getElementById("password");
+
+    const idErr = document.getElementById("idError");
+    const passErr = document.getElementById("passError");
+
+    idErr.style.display = "none";
+    passErr.style.display = "none";
+
+    if (id.value.trim() === "") {
+        idErr.style.display = "block";
+        ok = false;
+    }
+
+    if (pass.value.trim() === "") {
+        passErr.style.display = "block";
+        ok = false;
+    }
+
+    return ok;
+}
+
 document.getElementById("showPass").addEventListener("change", function() {
     const pass = document.getElementById("password");
     pass.type = this.checked ? "text" : "password";
