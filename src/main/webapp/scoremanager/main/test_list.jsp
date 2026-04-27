@@ -14,7 +14,6 @@
 			<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
 				<form action="TestListSubjectExecute.action" method="post">
 					<div class="row align-items-end mb-3">
-					<form action="" method="post">
 						<div class="col-2 fw-bold text-center align-self-center">
 							<label>科目情報</label>
 						</div>
@@ -41,7 +40,7 @@
 							<select class="form-select" id="student-f3-select" name="f3">
 							<option value="0">-----------</option>
 								<c:forEach var="sub" items="${sub_name_set }">
-									<option value="${sub.name }"<c:if test="${sub.name==f3 }">selected</c:if>>${sub.name }</option>
+									<option value="${sub.cd }"<c:if test="${sub==f3 }">selected</c:if>>${sub.name }</option>
 								</c:forEach>
 							</select>
 						</div>

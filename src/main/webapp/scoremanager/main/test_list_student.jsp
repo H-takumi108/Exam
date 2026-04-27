@@ -40,7 +40,7 @@
 							<select class="form-select" id="student-f3-select" name="f3">
 							<option value="0">-----------</option>
 								<c:forEach var="sub" items="${sub_name_set }">
-									<option value="${sub }"<c:if test="${sub==f3 }">selected</c:if>>${sub }</option>
+									<option value="${sub.cd }"<c:if test="${sub==f3 }">selected</c:if>>${sub.name }</option>
 								</c:forEach>
 							</select>
 						</div>

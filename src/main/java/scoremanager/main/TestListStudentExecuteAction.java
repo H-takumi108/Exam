@@ -3,7 +3,7 @@ package scoremanager.main;
 import java.util.List;
 
 import bean.Student;
-import bean.Teacher;
+import bean.Subject;
 import bean.TestListStudent;
 import dao.StudentDao;
 import dao.TestListStudentDao;
@@ -17,7 +17,14 @@ public class TestListStudentExecuteAction extends Action {
 			HttpServletRequest request, HttpServletResponse response
 			) throws Exception {
 		HttpSession session = request.getSession();
-		Teacher teacher = (Teacher)session.getAttribute("user");
+		
+		List<String> cNum = (List<String>) session.getAttribute("class_num_set");
+		List<Subject> subject = (List<Subject>) session.getAttribute("sub_name_set");
+		List<Integer> entYearSet = (List<Integer>) session.getAttribute("ent_year_set");
+		
+    	request.setAttribute("class_num_set", cNum);
+    	request.setAttribute("sub_name_set", subject);
+    	request.setAttribute("ent_year_set", entYearSet);
 		
 		String no = "";
 		Student student = null;

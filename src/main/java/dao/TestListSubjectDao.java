@@ -54,8 +54,8 @@ public class TestListSubjectDao extends Dao {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
-		String join = "INNER JOIN test t ON s.no = t.student_no AND s.school_cd = t.school_cd";
-		String condition = "WHERE s.ent_year = ? AND s.class_num = ? AND t.subject_cd = ? AND s.school_cd = ?";
+		String join = "INNER JOIN test t ON s.no = t.student_no AND s.school_cd = t.school_cd ";
+		String condition = "WHERE s.ent_year = ? AND s.class_num = ? AND t.subject_cd = ? AND s.school_cd = ? ";
 		String order = "ORDER BY s.no,t.no";
 		
 		try {

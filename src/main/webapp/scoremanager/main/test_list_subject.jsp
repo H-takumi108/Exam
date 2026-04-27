@@ -14,7 +14,6 @@
 		<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
 				<form action="TestListSubjectExecute.action" method="post">
 					<div class="row align-items-end mb-3">
-					<form action="" method="post">
 						<div class="col-2 fw-bold text-center align-self-center">
 							<label>科目情報</label>
 						</div>
@@ -41,7 +40,7 @@
 							<select class="form-select" id="student-f3-select" name="f3">
 							<option value="0">-----------</option>
 								<c:forEach var="sub" items="${sub_name_set }">
-									<option value="${sub }"<c:if test="${sub==f3 }">selected</c:if>>${sub }</option>
+									<option value="${sub.cd }"<c:if test="${sub==f3 }">selected</c:if>>${sub.name }</option>
 								</c:forEach>
 							</select>
 						</div>
@@ -73,34 +72,31 @@
 			</div>
             
 		<c:choose>
-			<c:when test="${tlsub.size()>0 }">
+			<c:when test="${tlsb.size()>0 }">
 				<p>科目：${f3 }</p>
-				<form action="TestRegistExecute.action" method="post">
 					<table class="table table-hover">
 						<tr>
 							<th>入学年度</th>
 							<th>クラス</th>
 							<th>学籍番号</th>
 							<th>氏名</th>
-							<th class="text-center">${tlsub.test_no }回</th>
-							<th class="text-center">${tlsub.test_no }回</th>
+							<c:forEach var="tlsbP" items="${tlsb[0].point }">
+								<th>${tlsbP.key }回</th>
+							</c:forEach>
 						</tr>
 						
-						<c:forEach var="student" items="${tlst }">
+						<c:forEach var="tlsb" items="${tlsb }">
 							<tr>
 								<td>${f1 }</td>
 								<td>${f2 }</td>
-								<td>${tlsub.student_no }</td>
-								<td>${tlsub.student_name }</td>
-								<td>${tlsub.point }</td>
-								<td>${tlsub.point }</td>
+								<td>${tlsb.studentNo }</td>
+								<td>${tlsb.studentName }</td>
+								<c:forEach var="tlsbP" items="${tlsb.point }">
+									<td>${tlsbP.value }</td>
+								</c:forEach>
 							</tr>
 						</c:forEach>
 					</table>
-					<div class="mt-3">
-						<input type="submit" value="登録して終了">
-					</div>
-				</form>
 			</c:when>
 			
 			<c:when test="${tlsub.size() == 0}">
