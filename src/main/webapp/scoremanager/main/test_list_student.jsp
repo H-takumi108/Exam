@@ -76,7 +76,7 @@
 		
 		<c:choose>
 			<c:when test="${tlst.size()>0 }">
-			<p>氏名：${.name }(${f4 })</p>
+			<p>氏名：${student.name }(${f4 })</p>
 				<table class="table table-hover">
 					<tr>
 						<th>科目名</th>
