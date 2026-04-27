@@ -78,7 +78,7 @@
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main class="container-fluid px-5">
+    <main class="container" style="max-width: 1200px;">
     ${param.content}
     </main>
     
