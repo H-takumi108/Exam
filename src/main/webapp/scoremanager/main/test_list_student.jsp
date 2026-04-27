@@ -14,7 +14,6 @@
 		<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
 				<form action="TestListSubjectExecute.action" method="post">
 					<div class="row align-items-end mb-3">
-					<form action="" method="post">
 						<div class="col-2 fw-bold text-center align-self-center">
 							<label>科目情報</label>
 						</div>
@@ -75,8 +74,8 @@
             
 		
 		<c:choose>
+			<p>氏名：${student.name }(${f4 })</p>
 			<c:when test="${tlst.size()>0 }">
-			<p>氏名：${.name }(${f4 })</p>
 				<table class="table table-hover">
 					<tr>
 						<th>科目名</th>
@@ -87,16 +86,13 @@
 					
 					<c:forEach var="tlst" items="${tlst }">
 						<tr>
-							<td>${tlst.name }</td>
-							<td>${tlst.cd }</td>
-							<td>${tlst.no }</td>
+							<td>${tlst.subjectName }</td>
+							<td>${tlst.subjectCd }</td>
+							<td>${tlst.num }</td>
 							<td>${tlst.point }</td>
 						</tr>
 					</c:forEach>
 				</table>
-				<div class="mt-3">
-					<input type="submit" value="登録して終了">
-				</div>
 			</c:when>
 			
 			<c:when test="${tlst.size() == 0}">
