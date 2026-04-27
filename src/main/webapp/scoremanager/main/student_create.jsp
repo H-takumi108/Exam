@@ -20,6 +20,10 @@
 	     			   		<option value="${year}">${year}</option>
 	   					 </c:forEach>
 						</select>
+						
+						<div class="text-warning">
+                            ${errors.entYear}
+                        </div>
 	               </div>
 	               
 	               <!-- 学生番号 -->
@@ -30,6 +34,10 @@
 	                          placeholder="学生番号を入力してください"
 	                          value="${no}"
 	                          required>
+	                          
+	                          <div class="text-warning">
+                                  ${errors.no}
+                              </div>
 	               </div>
 	               
 	               <!-- 氏名 -->
@@ -40,6 +48,10 @@
 	                          placeholder="氏名を入力してください"
 	                          value="${name }"
 	                          required>
+	                          
+	                          <div class="text-warning">
+                                  ${errors.name}
+                              </div>
 	               </div>
 	               
 	               <!-- クラス -->
