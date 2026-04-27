@@ -10,7 +10,7 @@
 		<section>
 		
 			<h2 class="h3 mb-4 bg-secondary bg-opacity-10 py-2 px4">
-				学生情報更新
+				学生情報変更
 			</h2>
 			
 			<form action="StudentUpdateExecute.action" method="post">
@@ -32,6 +32,9 @@
 					<label class="form-label">氏名</label>
 					<input type="text" name="nameStr" class="form-control" maxlength="30"
 					placeholder="氏名を入力してください" value="${name }" required>
+				    <div class="text-warning">
+                        ${errors.name}
+                    </div>
 				</div>
 				
 				<div class="mb-3">
