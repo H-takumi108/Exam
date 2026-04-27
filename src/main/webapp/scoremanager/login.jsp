@@ -47,7 +47,6 @@
     border: none;
     border-radius: 6px;
     background-color: #d9ecf7;
-    
 }
 
 .checkbox-area {
@@ -64,31 +63,34 @@
     border-radius: 6px;
 }
 
-.error {
-    color: red;
+.login-error {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 10px;
     text-align: center;
+    white-space: nowrap;
 }
 </style>
-
-<p>${msg }</p><%-- 追加部分 --%>
 
 <div class="login-box">
     <div class="login-title">ログイン</div>
 
-    <c:if test="${not empty error}">
-        <div class="error">${error}</div>
-    </c:if>
+    <form action="<c:url value='/scoremanager/LoginExecute.action' />" method="post">
 
-    <form action="LoginExecute.action" method="post">
+        <c:if test="${not empty msg}">
+            <p class="login-error">
+                ${msg}
+            </p>
+        </c:if>
 
         <div class="input-group">
             <span class="input-label">ID</span>
-            <input type="text" name="id" value="${param.id}">
+            <input type="text" name="id" value="${param.id}" required>
         </div>
 
         <div class="input-group">
             <span class="input-label">パスワード</span>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
         </div>
 
         <p class="checkbox-area">

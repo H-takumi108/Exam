@@ -30,7 +30,7 @@
 	               </div>
 	               
 	               <div class="text-start">
-	                    <input type="submit" value="変更">
+	                    <input type="submit" value="変更" class="btn btn-primary rounded-2 px-4">
 	               </div>
 	               
                </form>
