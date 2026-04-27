@@ -9,7 +9,7 @@
     <c:param name="scripts"></c:param>
     
     <c:param name="content">
-		<h2 class="h3 mb-3 fw-normal bg-secondary bg-opacity-10 py-2 px-4">成績一覧（学生）</h2>
+		<h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">成績一覧（学生）</h2>
 		
 		<div class="row border mx-3 mb-3 p-3 rounded" id="filter">
 				<form action="TestListSubjectExecute.action" method="post">
