@@ -17,6 +17,12 @@
 	               <div class="mb-3">
 	                   <label class="form-label">科目コード</label>
 	                   <p>${cd }</p>
+	                   
+	                   <c:if test="${not empty errors.cd}">
+                          <div class="text-warning">
+                             ${errors.cd}
+                          </div>
+                       </c:if>
 	               </div>
 	               
 	               <!-- 氏名 -->
@@ -27,6 +33,12 @@
 	                          placeholder="科目名を入力してください"
 	                          value="${name }"
 	                          required>
+	                   
+	                   <c:if test="${not empty errors.name}">
+                          <div class="text-warning">
+                              ${errors.name}
+                          </div>
+                       </c:if>
 	               </div>
 	               
 	               <div class="text-start">
