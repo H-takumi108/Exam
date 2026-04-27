@@ -14,7 +14,7 @@ import bean.Test;
 
 public class TestDao extends Dao {
 
-	private String baseSql = "SELECT s.ent_year,s.class_num,s.student_no,s.name AS student_name,"
+	private String baseSql = "SELECT s.ent_year,s.class_num,s.no,s.name AS student_name,"
 			+ "t.no,t.point,sub.cd AS subject_cd,sub.name AS subject_name,s.is_attend,s.school_cd FROM student s ";
 
 	public Test get(Student student,Subject subject,School school,int no) throws Exception {
@@ -86,7 +86,7 @@ public class TestDao extends Dao {
 				Student stu = new Student();
 				stu.setEntYear(rSet.getInt("ent_year"));
 				stu.setClassNum(rSet.getString("class_num"));
-				stu.setNo(rSet.getString("student_no"));
+				stu.setNo(rSet.getString("no"));
 				stu.setName(rSet.getString("student_name"));
 				stu.setAttend(rSet.getBoolean("is_attend"));
 				
@@ -110,10 +110,10 @@ public class TestDao extends Dao {
 		Connection connection = getConnection();
 		PreparedStatement statement = null;
 		ResultSet rSet = null;
-		String leftjoin = "LEFT JOIN test t ON s.student_no = t.student_no AND s.school_cd = t.school_cd AND t.subject_cd = ? AND t.no = ? ";
+		String leftjoin = "LEFT JOIN test t ON s.no = t.student_no AND s.school_cd = t.school_cd AND t.subject_cd = ? AND t.no = ? ";
 		String leftjoin2 = "Left JOIN subject sub ON t.subject_cd = sub.cd AND t.school_cd = sub.school_cd ";
 		String condition = "WHERE s.ent_year = ? AND s.class_num = ? AND s.school_cd = ? ";
-		String order = "ORDER BY s.student_no";
+		String order = "ORDER BY s.no";
 		
 		try {
 			statement = connection.prepareStatement(baseSql+leftjoin+leftjoin2+condition+order);
