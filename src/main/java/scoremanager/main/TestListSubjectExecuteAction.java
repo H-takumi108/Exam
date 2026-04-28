@@ -39,17 +39,20 @@ public class TestListSubjectExecuteAction extends Action {
     	
     	Subject sub = subDao.get(subCd, teacher.getSchool());
     	
-    	if (year != 0 || !classNum.equals("0") || subCd != null) {
+    	if (year != 0 && !classNum.equals("0") && !subCd.equals("0")) {
     		List<TestListSubject> tlsb = tlsbDao.filter(year, classNum, sub, teacher.getSchool() );
     		request.setAttribute("tlsb", tlsb);
     	} else {
-    		errors.put("f1", "入学年度とクラスと科目を選択してください");
-    		request.setAttribute("errors", errors);
+    		request.setAttribute("errors", "入学年度とクラスと科目を選択してください");
     	}
     	
     	request.setAttribute("f1", year);
     	request.setAttribute("f2", classNum);
-    	request.setAttribute("f3", sub.getName());
+    	if (sub != null) {
+    		request.setAttribute("f3", sub.getName());
+    	} else {
+    		request.setAttribute("f3", subCd);
+    	}
     	request.setAttribute("class_num_set", cNum);
     	request.setAttribute("sub_name_set", subject);
     	request.setAttribute("ent_year_set", entYearSet);

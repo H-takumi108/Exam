@@ -90,7 +90,7 @@
 						<div class="mt-3">
 							<input type="submit" value="登録して終了">
 						</div>
-						${error2 }<%--エラー処理を追加した --%>
+						<div class="text-warning">${error2 }</div><%--エラー処理を追加した --%>
 					</form>
 				</c:when>
 			</c:choose>

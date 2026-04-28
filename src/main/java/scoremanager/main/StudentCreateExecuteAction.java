@@ -1,7 +1,13 @@
 package scoremanager.main;
  
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.School;
 import bean.Student;
 import bean.Teacher;
+import dao.ClassNumDao;
 import dao.StudentDao;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,16 +37,22 @@ public class StudentCreateExecuteAction extends Action {
     	//エラーを未発生に設定
     	boolean error = false;
     	// 学生番号が未入力なら
-    	if (noStr == null) {
+    	if (noStr == null || noStr.equals("")) {
     		//jspに表示
     	   req.setAttribute("error1", "このフィードを入力して下さい");
     	   //エラーを発生に変更
     	   error = true;
     	} else {
-    		//入力されていたら重複していないかを確認
+    		//入力されていたら
+    		//文字が含まれてないかを確認
+    		if (!noStr.matches("\\d+")) {
+    		    // 数字以外が含まれている場合
+    		    req.setAttribute("error1", "学生番号は数字のみで入力してください");
+    		    error = true;
+    		} else {
+    		//重複していないかを確認
     		StudentDao dao = new StudentDao();
     	    Student student = dao.get(noStr);
-
     	    //重複していたら
     	    if (student != null) {
     	    	//jspに表示
@@ -48,9 +60,10 @@ public class StudentCreateExecuteAction extends Action {
     	      //エラーを発生に変更
     	        error = true;
     	    }
+    	    }
     	}
     	//学生氏名が未入力なら
-    	if (nameStr == null) {
+    	if (nameStr == null || nameStr.equals("")) {
     		//jspに表示
     		req.setAttribute("error2", "このフィードを入力して下さい");
     		//エラーを発生に変更
@@ -75,6 +88,20 @@ public class StudentCreateExecuteAction extends Action {
     	}
     	//エラーが発生になっていたら
     	if (error == true) {
+        	LocalDate todaysDate = LocalDate.now();
+        	int year = todaysDate.getYear();
+        	
+        	List<Integer> entYearSet = new ArrayList<>();
+        	for (int i = year -10;i < year + 1; i++) {
+        		entYearSet.add(i);
+        	}    	
+        	
+        	School school = teacher.getSchool();
+    	    ClassNumDao cdao = new ClassNumDao();
+    	    List<String> classList = cdao.filter(school);
+    	
+        	req.setAttribute("classList",classList);
+        	req.setAttribute("ent_year_set", entYearSet);
     		//入力用のjspに戻る
     		req.getRequestDispatcher("student_create.jsp").forward(req, res);
     		return;

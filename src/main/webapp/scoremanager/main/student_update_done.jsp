@@ -15,7 +15,7 @@
             
             
             <div class="mt-4">
-                <a href="StudentList">
+                <a href="StudentList.action">
                     学生一覧
                 </a>
             </div>

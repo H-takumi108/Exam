@@ -97,7 +97,7 @@
 			
 			<c:when test="${tlst.size() == 0}">
 				<p>氏名：${student.name }(${f4 })</p>
-				<p>成績情報が存在しませんでした。</p>
+				<p>成績情報が存在しませんでした</p>
 			</c:when>
 			
 			<c:otherwise>
