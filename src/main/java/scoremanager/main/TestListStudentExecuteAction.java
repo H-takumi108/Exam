@@ -35,8 +35,11 @@ public class TestListStudentExecuteAction extends Action {
 		no = request.getParameter("f4");
 		
 		student = sDao.get(no);
-		
+		if (student != null) {
 		tlst = tlstDao.filter(student);
+		} else {
+			int a;  //ここにエラー処理を記入
+		}
 		
 		request.setAttribute("f4", no);
 		request.setAttribute("student", student);
