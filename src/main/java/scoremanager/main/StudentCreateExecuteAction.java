@@ -33,7 +33,7 @@ public class StudentCreateExecuteAction extends Action {
     	noStr = req.getParameter("noStr");
     	nameStr = req.getParameter("nameStr");
     	classNumStr = req.getParameter("classNumStr");
-    	  
+    	   
     	//エラーを未発生に設定
     	boolean error = false;
     	// 学生番号が未入力なら
