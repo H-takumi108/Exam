@@ -47,7 +47,6 @@
 						<div class="col-2 text-end">
 							<button class="btn btn-secondary" id="filter-button-1">検索</button>
 						</div>
-						${error }
 					</div>
 				</form>
 				
@@ -98,7 +97,7 @@
 			
 			<c:when test="${tlst.size() == 0}">
 				<p>氏名：${student.name }(${f4 })</p>
-				<p>成績情報が存在しませんでした。</p>
+				<p>成績情報が存在しませんでした</p>
 			</c:when>
 			
 			<c:otherwise>

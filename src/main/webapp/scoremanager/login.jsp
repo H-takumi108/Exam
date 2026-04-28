@@ -75,7 +75,7 @@
 <div class="login-box">
     <div class="login-title">ログイン</div>
 
-    <form action="<c:url value='/scoremanager/Login.action' />" method="post">
+    <form action="<c:url value='/scoremanager/LoginExecute.action' />" method="post">
 
         <c:if test="${not empty msg}">
             <p class="login-error">

@@ -43,8 +43,7 @@ public class TestListSubjectExecuteAction extends Action {
     		List<TestListSubject> tlsb = tlsbDao.filter(year, classNum, sub, teacher.getSchool() );
     		request.setAttribute("tlsb", tlsb);
     	} else {
-    		errors.put("f1", "入学年度とクラスと科目を選択してください");
-    		request.setAttribute("errors", errors);
+    		request.setAttribute("errors", "入学年度とクラスと科目を選択してください");
     	}
     	
     	request.setAttribute("f1", year);

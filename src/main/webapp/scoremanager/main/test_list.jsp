@@ -47,7 +47,6 @@
 						<div class="col-2 text-end">
 							<button class="btn btn-secondary" id="filter-button-1">検索</button>
 						</div>
-						${error }
 					</div>
 				</form>
 				
