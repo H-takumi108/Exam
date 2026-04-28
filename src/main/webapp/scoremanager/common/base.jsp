@@ -63,28 +63,23 @@
 
 </head>
 
-<body>
+<body class="bg-light">
     
     <!-- ヘッダー -->
-    <header class="bg-white shadow-sm">
-    	<div class="header-box d-flex justify-content-between align-items-center">
-           	<h1 class="page-title m-0">得点管理システム</h1>
+    <header class="bg-white shadow-sm py-4 mb-4">
+       <div class="header-box d-flex justify-content-between align-items-center">
+        <h1 class="page-title m-0">得点管理システム</h1>
         
-        	<c:if test="${not empty sessionScope.user}">
-		        <div>
-		           <span class="me-3">${sessionScope.user.name} 様</span>
-		           <a href="Logout.action">ログアウト</a>
-		        </div>
-        	</c:if>
-        
-        
-       </div>
+        <div>
+           <span class="me-3">${sessionScope.user.name} 様</span>
+           <a href="Logout.action">ログアウト</a>
+        </div>
     </header>
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main style="max-width: 1200px; margin:0 auto;">
-    	<jsp:include page="${param.content}" />
+    <main class="container" style="max-width: 1200px;">
+    ${param.content}
     </main>
     
     <!-- フッター -->
