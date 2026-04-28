@@ -37,7 +37,7 @@ public class StudentUpdateExecuteAction extends Action {
     	} else {
     	    attend = false;
     	}
-    	   
+    	
     	//入学年度をint型に変換
     	entYear = Integer.parseInt(entYearStr);
     	//エラーを未発生に設定
