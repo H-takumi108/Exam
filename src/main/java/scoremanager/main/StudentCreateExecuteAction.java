@@ -37,7 +37,7 @@ public class StudentCreateExecuteAction extends Action {
     	//エラーを未発生に設定
     	boolean error = false;
     	// 学生番号が未入力なら
-    	if (noStr == null || noStr.equals("")) {
+    	if (noStr == null || noStr.trim().isEmpty()) {
     		//jspに表示
     	   req.setAttribute("error1", "このフィードを入力して下さい");
     	   //エラーを発生に変更
