@@ -20,6 +20,8 @@
 	                          placeholder="科目コードを入力してください"
 	                          value="${cd}"
 	                          required>
+	                          
+	               		<div class="text-warning">${error }</div>
 	               </div>
 	               
 	               <!-- 氏名 -->
@@ -35,7 +37,7 @@
 	               <div class="text-start">
 	                    <input type="submit" value="登録" class="btn btn-primary rounded-2 px-4">
 	               </div>
-	               
+
                </form>
                
                <div class="mt-3">
