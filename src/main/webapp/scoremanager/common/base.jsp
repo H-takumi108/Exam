@@ -74,6 +74,7 @@
            <span class="me-3">${sessionScope.user.name} 様</span>
            <a href="Logout.action">ログアウト</a>
         </div>
+        </div>
     </header>
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
