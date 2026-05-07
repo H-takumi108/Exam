@@ -2,9 +2,38 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <style>
+body.bg-light {
+    background-color: #ffffff !important;
+}
+
+.header-box {
+    background-color: #e9f7ff !important;
+}
+
+header {
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+header span,
+header a {
+    display: none !important;
+}
+
+#sidebar {
+    display: none !important;
+}
+
+
+#main {
+    margin-left: 0 !important;
+}
+
+
 .login-box {
     width: 520px;
-    margin: 20px auto 20px;
+    margin: 40px auto 20px;
     border: 1px solid #ccc;
     border-radius: 0;
     overflow: hidden;
@@ -70,6 +99,15 @@
     text-align: center;
     white-space: nowrap;
 }
+
+main{
+    display: flex;
+    justify-content: center;  
+    align-items: center;       
+    min-height: 70vh;    
+}
+
+
 </style>
 
 <div class="login-box">
