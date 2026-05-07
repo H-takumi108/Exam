@@ -58,7 +58,7 @@
             
 			<c:choose>
 				<c:when test="${test.size()>0 }">
-				<p>科目：${f3 }(${f4 })</p>
+				<p>科目：${f3 }(${f4 }回)</p>
 					<form action="TestRegistExecute.action" method="post">
 					<input type="hidden" name="f1" value="${f1}">
 					<input type="hidden" name="f2" value="${f2}">
@@ -75,16 +75,36 @@
 								<th class="text-center">点数</th>
 							</tr>
 							
-							<c:forEach var="t" items="${test }">
-								<tr>
-									<td><input type="hidden" name="entYearList" value="${t.student.entYear}">${t.student.entYear }</td>
-									<td><input type="hidden" name="classNumList" value="${t.student.classNum}">${t.student.classNum }</td>
-									<td><input type="hidden" name="noList" value="${t.student.no}">${t.student.no }</td>
-									<td><input type="hidden" name="nameList" value="${t.student.name}">${t.student.name }</td>
-									<td class="text-center">
-										<input type="text" name="pointList" value="${t.point }">
-									</td>
-								</tr>
+							<c:forEach var="t" items="${test }" varStatus="status">
+							    <tr>
+							        <td>
+							            <input type="hidden" name="entYearList" value="${t.student.entYear}">
+							            ${t.student.entYear }
+							        </td>
+							
+							        <td>
+							            <input type="hidden" name="classNumList" value="${t.student.classNum}">
+							            ${t.student.classNum }
+							        </td>
+							
+							        <td>
+							            <input type="hidden" name="noList" value="${t.student.no}">
+							            ${t.student.no }
+							        </td>
+							
+							        <td>
+							            <input type="hidden" name="nameList" value="${t.student.name}">
+							            ${t.student.name }
+							        </td>
+							
+							        <td class="text-center">
+							            <input type="text" name="pointList" value="${t.point }">
+							
+							            <div class="text-warning">
+							                ${errors[status.index]}
+							            </div>
+							        </td>
+							    </tr>
 							</c:forEach>
 						</table>
 						<div class="mt-3">

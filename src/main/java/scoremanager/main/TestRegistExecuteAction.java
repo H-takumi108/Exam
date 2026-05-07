@@ -1,5 +1,6 @@
 package scoremanager.main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,8 @@ import bean.Student;
 import bean.Subject;
 import bean.Teacher;
 import bean.Test;
+import dao.ClassNumDao;
+import dao.SubjectDao;
 import dao.TestDao;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -38,8 +41,12 @@ public class TestRegistExecuteAction extends Action {
 
 	        TestDao dao = new TestDao();
 	        List<Test> list = new ArrayList<>();
+	        
+	        List<String> errors = new ArrayList<>();
+	        boolean hasError = false;
 
 	        for (int i = 0; i < entYearList.length; i++) {
+
 	            Test test = new Test();
 
 	            Student student = new Student();
@@ -53,39 +60,69 @@ public class TestRegistExecuteAction extends Action {
 	            test.setSchool(school);
 	            test.setNo(testNo);
 
+	            String error = "";
 
 	            if (pointList[i] != null && !pointList[i].isEmpty()) {
-	            	int point = Integer.parseInt(pointList[i]);
-	            	if (point > 100 || point < 0) {
-	            		String entYearStr = request.getParameter("f1");
-	            	    String classNumStr = request.getParameter("f2");
-	            	    String subjectCdStr = request.getParameter("f3");
-	            	    String noStr = request.getParameter("f4");
 
-	            	    int entYear = Integer.parseInt(entYearStr);
-	            	    int no = Integer.parseInt(noStr);
+	                try {
+	                    int point = Integer.parseInt(pointList[i]);
 
-	            	    Subject sub = new Subject();
-	            	    sub.setCd(subjectCdStr);
+	                    if (point < 0 || point > 100) {
+	                        error = "0～100の範囲で入力してください";
+	                        hasError = true;
+	                    } else {
+	                        test.setPoint(point);
+	                    }
 
-	            	    List<Test> reloadList = dao.filter(entYear, classNumStr, sub, no, school);
+	                } catch (NumberFormatException e) {
+	                    error = "数値を入力してください";
+	                    hasError = true;
+	                }
 
-	            	    request.setAttribute("f1", entYearStr);
-	            	    request.setAttribute("f2", classNumStr);
-	            	    request.setAttribute("f3", subjectCdStr);
-	            	    request.setAttribute("f4", noStr);
-	            	    request.setAttribute("test", reloadList);
-
-	            	    request.setAttribute("error2", "0～100の範囲で入力してください");
-
-	            	    request.getRequestDispatcher("test_regist.jsp").forward(request, response);
-	            	    return;
-	            	}
-	                test.setPoint(point);
 	            } else {
 	                test.setPoint(0);
 	            }
+
+	            errors.add(error);
 	            list.add(test);
+	        }
+	        
+	        if (hasError) {
+
+	            request.setAttribute("errors", errors);
+
+	            request.setAttribute("f1", request.getParameter("f1"));
+	            request.setAttribute("f2", request.getParameter("f2"));
+	            request.setAttribute("f3", request.getParameter("f3"));
+	            request.setAttribute("f4", request.getParameter("f4"));
+	            
+	            ClassNumDao cNumDao = new ClassNumDao();
+	            List<String> cNumList = cNumDao.filter(school);
+
+	            SubjectDao subDao = new SubjectDao();
+	            List<Subject> subList = subDao.filter(school);
+
+	            LocalDate today = LocalDate.now();
+	            int year = today.getYear();
+
+	            List<Integer> entYearSet = new ArrayList<>();
+	            for (int j = year - 10; j <= year; j++) {
+	                entYearSet.add(j);
+	            }
+
+	            List<Integer> nolist = List.of(1, 2);
+
+	            request.setAttribute("ent_year_set", entYearSet);
+	            request.setAttribute("class_num_set", cNumList);
+	            request.setAttribute("sub_name_set", subList);
+	            request.setAttribute("test_no_set", nolist);
+
+	            request.setAttribute("test", list);
+
+	            request.getRequestDispatcher("test_regist.jsp")
+	                   .forward(request, response);
+
+	            return;
 	        }
 	        dao.save(list);
 	        
