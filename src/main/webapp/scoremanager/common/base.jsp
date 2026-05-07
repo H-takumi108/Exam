@@ -34,10 +34,10 @@
         
     	#sidebar {
         	position: fixed;
-        	top: 100px;
+        	top: 120px;
         	left: 0;
         	width: 200px;
-        	height: 100vh;
+        	height: calc(100vh - 120px);
         	padding: 10px;
         	background-color: #f8f8f8;
         	overflow-y: auto;
