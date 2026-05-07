@@ -32,8 +32,8 @@ header a {
 
 
 .login-box {
-    width: 520px;
-    margin: 40px auto 20px;
+    width: 620px;
+    margin: 60px auto 40px;
     border: 1px solid #ccc;
     border-radius: 0;
     overflow: hidden;
@@ -43,13 +43,13 @@ header a {
     background: #eee;
     text-align: center;
     font-weight: bold;
-    padding: 12px;
-    font-size: 18px;
+    padding: 15px;
+    font-size: 25px;
 }
 
 .login-box form {
     background: #fff;
-    padding: 20px 30px;
+    padding: 35px 40px;
     border-radius: 8px;
 }
 
@@ -68,7 +68,7 @@ header a {
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
-    width: 97%;
+    width: 100%;
     margin: 0 auto;
     display: block;
     padding: 14px 12px;
