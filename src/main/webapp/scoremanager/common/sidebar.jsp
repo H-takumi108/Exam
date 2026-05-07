@@ -30,7 +30,7 @@
 						</li>
 						
 						<li>
-						    <a href="TestList.action class="text-decoration-none">
+						    <a href="TestList.action" class="text-decoration-none">
 						        成績参照
 						    </a>
 						</li>
