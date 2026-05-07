@@ -5,7 +5,7 @@
 	<aside id="sidebar" class="p-3">
 	
 		<nav>
-			<ul class="List-unstyled">
+			<ul class="list-unstyled">
 				<li class="mb-3">
 				    <a href="Menu.action" class="text-decoration-none">
 				        メニュー
