@@ -1,5 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<jsp:include page="/scoremanager/common/base.jsp">
-    <jsp:param name="content" value="/scoremanager/login.jsp" />
-</jsp:include>
+<c:import url="/scoremanager/common/base.jsp">
+
+    <c:param name="title">ログイン</c:param>
+
+    <c:param name="content">
+        <jsp:include page="/scoremanager/login.jsp" />
+    </c:param>
+
+</c:import>
