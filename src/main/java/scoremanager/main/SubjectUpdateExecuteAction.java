@@ -28,7 +28,7 @@ public class SubjectUpdateExecuteAction extends Action {
     	nameStr = req.getParameter("nameStr");
     	 
  
-    	// 登録を行う
+    	// 登録を行う 
    	    Subject subject = new Subject();
    	    subject.setSchool(school);
    	    subject.setCd(cdStr);
