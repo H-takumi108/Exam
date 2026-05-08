@@ -37,9 +37,9 @@
     	#sidebar {
         	position: fixed;
         	top: 120px;
-        	left: 0;
+        	left: 180px;
         	width: 200px;
-        	height: calc(100vh - 120px);
+        	height: calc(100vh - 360px);
         	padding: 10px;
         	background-color: #f8f8f8;
         	overflow-y: auto;
@@ -59,18 +59,18 @@
     	}
 
     	#main {
-        	margin-left: 240px;
-        	margin-right: 40px;
+        	margin-left: 360px;
+        	margin-right: 20px;
     	}
     </style>
 
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100">
+<body class="bg-light">
     
     <!-- ヘッダー -->
-    <header class="py-4 mb-4">
-      <div style="max-width: 1400px; margin: 0 auto;">
+    <header class="pt-0 py-3 mb-2">
+      <div style="max-width: 1000px; margin: 0 auto;">
        <div class="header-box d-flex justify-content-between align-items-center">
         <h1 class="page-title m-0">得点管理システム</h1>
         
@@ -88,15 +88,23 @@
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
     <!-- main -->
-    <main id="main" class="flex-grow-1">
-       <div style="max-width: 1100px;">
+    <main id="main" 
+          style="max-width:800px;
+                 margin-left:400px;
+                 margin-right:20px;
+                 margin-bottom:80px;">
            ${param.content}
-       </div>
     </main>
     
     <!-- フッター -->
-<footer class="py-1" style="background-color:#e9ecef;">
-  <div style="max-width: 1400px; margin: 0 auto;" class="text-center">
+<footer class="py-1">
+  <div style="
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color:#e9ecef;
+      text-align:center;
+      padding:8px 0;
+   ">
     © 2023 TIC<br>
     大原学園
   </div>
