@@ -12,6 +12,7 @@
 
 	
     <style>
+         
          .page-title {
              font-size: 2.2rem;
              font-weight: bold;
@@ -21,7 +22,8 @@
         .header-box {
              border-radius: 0px;
              background-color: #e9f7ff;
-             padding: 0.8rem 1.5rem;
+             padding: 1.4rem 2rem;
+             border: 1px solid #c5c5c5;
          }
          
          .custom-success {
@@ -57,7 +59,8 @@
     	}
 
     	#main {
-        	margin-left: 220px;
+        	margin-left: 240px;
+        	margin-right: 40px;
     	}
     </style>
 
@@ -66,27 +69,37 @@
 <body class="bg-light d-flex flex-column min-vh-100">
     
     <!-- ヘッダー -->
-    <header class="bg-white shadow-sm py-4 mb-4">
+    <header class="py-4 mb-4">
+      <div style="max-width: 1400px; margin: 0 auto;">
        <div class="header-box d-flex justify-content-between align-items-center">
         <h1 class="page-title m-0">得点管理システム</h1>
         
-        <div>
-           <span class="me-3">${sessionScope.user.name} 様</span>
-           <a href="Logout.action">ログアウト</a>
-        </div>
-        </div>
+        
+        <c:if test="${not empty sessionScope.user }">
+           <div>
+                <span class="me-3">${sessionScope.user.name} 様</span>
+                <a href="Logout.action">ログアウト</a>
+           </div>
+        </c:if>
+       </div>
+      </div>
     </header>
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main id="main" class="container flex-grow-1" style="max-width: 1200px;">
-    ${param.content}
+    <!-- main -->
+    <main id="main" class="flex-grow-1">
+       <div style="max-width: 1100px;">
+           ${param.content}
+       </div>
     </main>
     
     <!-- フッター -->
-<footer class="text-center py-2 mt-5" style="background-color:#e9ecef; width:100%;">
+<footer class="py-1" style="background-color:#e9ecef;">
+  <div style="max-width: 1400px; margin: 0 auto;" class="text-center">
     © 2023 TIC<br>
     大原学園
+  </div>
 </footer>
 
 </body>
