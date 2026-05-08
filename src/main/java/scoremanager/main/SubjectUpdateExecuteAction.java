@@ -22,7 +22,7 @@ public class SubjectUpdateExecuteAction extends Action {
     	//変数の定義
     	String cdStr = "";
     	String nameStr ="";
-    	
+    	 
     	//jspからの入力
     	cdStr = req.getParameter("cdStr");
     	nameStr = req.getParameter("nameStr");

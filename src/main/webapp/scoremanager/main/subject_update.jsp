@@ -27,7 +27,7 @@
                              ${error}
                        </div>
 	               </div>
-	               
+	                
 	               <!-- 氏名 -->
 	               <div class="mb-3">
 	                   <label class="form-label">科目名</label>
