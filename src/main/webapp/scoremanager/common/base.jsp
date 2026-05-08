@@ -87,6 +87,7 @@
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
+    <!-- main -->
     <main id="main" class="flex-grow-1">
        <div style="max-width: 1100px;">
            ${param.content}
