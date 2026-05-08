@@ -108,7 +108,7 @@
 							</c:forEach>
 						</table>
 						<div class="mt-3">
-							<input type="submit" value="登録して終了">
+							<input type="submit" value="登録して終了" class="btn btn-secondary rounded-2 px-4">
 						</div>
 						<div class="text-warning">${error2 }</div><%--エラー処理を追加した --%>
 					</form>
