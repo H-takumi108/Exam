@@ -1,42 +1,11 @@
-<%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <style>
-body.bg-light {
-    background-color: #ffffff !important;
-}
-
-.header-box {
-    background-color: #e9f7ff !important;
-}
-
-header {
-    box-shadow: none !important;
-    margin-bottom: 0 !important;
-    border-bottom: none !important;
-}
-
-header span,
-header a {
-    display: none !important;
-}
-
-#sidebar {
-    display: none !important;
-}
-
-
-#main {
-    margin-left: 0 !important;
-}
-
-
 .login-box {
-    width: 620px;
-    margin: 60px auto 40px;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    overflow: hidden;
+    width: 760px;
+    margin: 60px auto 35px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
 }
 
 .login-title {
@@ -44,52 +13,35 @@ header a {
     text-align: center;
     font-weight: bold;
     padding: 15px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .login-box form {
-    background: #fff;
-    padding: 35px 40px;
-    border-radius: 8px;
+    padding: 15px 45px 10px;
 }
 
 .input-group {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .input-label {
     position: absolute;
     top: 5px;
     left: 10px;
-    font-size: 11px;
+    font-size: 18px;
     color: #666;
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
-    width: 100%;
-    margin: 0 auto;
+    width: 99%;
     display: block;
-    padding: 14px 12px;
+    padding: 24px 12px;
     box-sizing: border-box;
     border: none;
     border-radius: 6px;
     background-color: #e9f7ff;
-}
-
-.checkbox-area {
-    text-align: center;
-}
-
-.login-box input[type="submit"] {
-    display: block;
-    margin: 10px auto 5px;
-    padding: 8px 35px;
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    border-radius: 6px;
 }
 
 .login-error {
@@ -100,25 +52,35 @@ header a {
     white-space: nowrap;
 }
 
-main{
-    display: flex;
-    justify-content: center;  
-    align-items: center;       
-    min-height: 70vh;    
+.checkbox-area {
+    text-align: center;
+    margin: 5px 0 15px;
+    font-size: 20px;
 }
 
-
+.login-box input[type="submit"] {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 14px 65px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: 25px;
+}
 </style>
 
 <div class="login-box">
+
     <div class="login-title">ログイン</div>
 
     <form action="<c:url value='/scoremanager/LoginExecute.action' />" method="post">
 
         <c:if test="${not empty msg}">
-            <p class="login-error">
-                ${msg}
-            </p>
+            <p class="login-error">${msg}</p>
         </c:if>
 
         <div class="input-group">
@@ -135,9 +97,7 @@ main{
             <input type="checkbox" id="showPass"> パスワードを表示
         </p>
 
-        <p>
-            <input type="submit" value="ログイン">
-        </p>
+        <p><input type="submit" value="ログイン"></p>
 
     </form>
 </div>
