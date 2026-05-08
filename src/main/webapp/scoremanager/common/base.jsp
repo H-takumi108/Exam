@@ -74,10 +74,13 @@
        <div class="header-box d-flex justify-content-between align-items-center">
         <h1 class="page-title m-0">得点管理システム</h1>
         
-        <div>
-           <span class="me-3">${sessionScope.user.name} 様</span>
-           <a href="Logout.action">ログアウト</a>
-        </div>
+        
+        <c:if test="${not empty sessionScope.user }">
+           <div>
+                <span class="me-3">${sessionScope.user.name} 様</span>
+                <a href="Logout.action">ログアウト</a>
+           </div>
+        </c:if>
        </div>
       </div>
     </header>
