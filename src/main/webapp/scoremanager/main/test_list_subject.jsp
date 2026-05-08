@@ -93,11 +93,15 @@
 								<td>${f2 }</td>
 								<td>${tlsb.studentNo }</td>
 								<td>${tlsb.studentName }</td>
-								<c:forEach var="tlsbP" items="${tlsb.point }">
-								<td>
-									 ${empty tlsbP.value || tlsbP.value == 0 ? "-" : tlsbP.value}
-								</td>
+								<c:forEach var="tlsbP" items="${tlsb.point}">
+								    <td>
+								        ${empty tlsbP.value ? "-" : tlsbP.value}
+								    </td>
 								</c:forEach>
+								
+								<c:if test="${tlsb.point.size() == 1}">
+								    <td>-</td>
+								</c:if>
 							</tr>
 						</c:forEach>
 					</table>
