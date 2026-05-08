@@ -63,16 +63,16 @@ public class StudentCreateExecuteAction extends Action {
     	    }
     	}
     	//学生氏名が未入力なら
-    	if (nameStr == null || nameStr.equals("")) {
+    	if (nameStr == null || nameStr.trim().isEmpty()) {
     		//jspに表示
-    		req.setAttribute("error2", "このフィードを入力して下さい");
+    		req.setAttribute("error2", "このフィルードを入力して下さい");
     		//エラーを発生に変更
     	   error = true;
     	}
     	//入学年度が未入力なら
-    	if (entYearStr == null) {
+    	if (entYearStr == null || entYearStr.trim().isEmpty()) {
     		//jspに表示
-    	    req.setAttribute("error3","入学年度を入力してください");
+    	    req.setAttribute("error3","入学年度を選択してください");
     	  //エラーを発生に変更
     	    error = true;
     	} else {

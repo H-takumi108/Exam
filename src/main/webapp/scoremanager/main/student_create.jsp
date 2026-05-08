@@ -16,6 +16,7 @@
 	               <div class="mb-3">
 	                   <label class="form-label">入学年度</label>
 	                  <select name="entYearStr" class="form-select">
+	                  	 <option value="">-----------</option>
 	    					<c:forEach var="year" items="${ent_year_set}">
 	     			   		<option value="${year}">${year}</option>
 	   					 </c:forEach>
