@@ -23,6 +23,9 @@
                              ${errors.cd}
                           </div>
                        </c:if>
+                       <div class="text-warning">
+                             ${error}
+                       </div>
 	               </div>
 	               
 	               <!-- 氏名 -->

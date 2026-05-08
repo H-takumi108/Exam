@@ -35,11 +35,21 @@ public class SubjectUpdateExecuteAction extends Action {
    	    subject.setName(nameStr);
 
         SubjectDao dao = new SubjectDao();
+        
+        Subject sub = dao.get(cdStr, school);
+        if (sub == null) {
+        	req.setAttribute("school_cd", school.getCd());
+    	    req.setAttribute("cd", cdStr);
+    	    req.setAttribute("name", nameStr);
+    	    req.setAttribute("error", "科目が存在していません");
+    	    req.getRequestDispatcher("subject_update.jsp").forward(req, res);
+        } else {
         boolean result = dao.save(subject);
         if (result == true) {
         	req.getRequestDispatcher("subject_update_done.jsp").forward(req, res);
         } else {
         	req.getRequestDispatcher("error.jsp").forward(req, res);
+        }
         }
     }
 }
