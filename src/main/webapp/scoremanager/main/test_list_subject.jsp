@@ -83,9 +83,8 @@
 							<th>クラス</th>
 							<th>学籍番号</th>
 							<th>氏名</th>
-							<c:forEach var="tlsbP" items="${tlsb[0].point }">
-								<th>${tlsbP.key }回</th>
-							</c:forEach>
+							<th>1回</th>
+							<th>2回</th>
 						</tr>
 						
 						<c:forEach var="tlsb" items="${tlsb }">
@@ -95,7 +94,9 @@
 								<td>${tlsb.studentNo }</td>
 								<td>${tlsb.studentName }</td>
 								<c:forEach var="tlsbP" items="${tlsb.point }">
-									<td>${tlsbP.value }</td>
+								<td>
+									 ${empty tlsbP.value || tlsbP.value == 0 ? "-" : tlsbP.value}
+								</td>
 								</c:forEach>
 							</tr>
 						</c:forEach>
