@@ -56,7 +56,7 @@ public class StudentCreateExecuteAction extends Action {
     	    //重複していたら
     	    if (student != null) {
     	    	//jspに表示
-    	        req.setAttribute("error1", "この学生番号が重複しています");
+    	        req.setAttribute("error1", "学生番号が重複しています");
     	      //エラーを発生に変更
     	        error = true;
     	    }

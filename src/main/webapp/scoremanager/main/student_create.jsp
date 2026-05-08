@@ -22,7 +22,7 @@
 						</select>
 						
 						<div class="text-warning">
-                            ${errors.entYear}
+                            ${error3}
                         </div>
 	               </div>
 	               
@@ -36,7 +36,7 @@
 	                          required>
 	                          
 	                          <div class="text-warning">
-                                  ${errors.no}
+                                  ${error1}
                               </div>
 	               </div>
 	               
@@ -50,7 +50,7 @@
 	                          required>
 	                          
 	                          <div class="text-warning">
-                                  ${errors.name}
+                                  ${error2}
                               </div>
 	               </div>
 	               
