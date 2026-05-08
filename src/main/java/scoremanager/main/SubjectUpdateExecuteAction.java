@@ -26,7 +26,7 @@ public class SubjectUpdateExecuteAction extends Action {
     	//jspからの入力
     	cdStr = req.getParameter("cdStr");
     	nameStr = req.getParameter("nameStr");
-    	
+    	 
  
     	// 登録を行う
    	    Subject subject = new Subject();
