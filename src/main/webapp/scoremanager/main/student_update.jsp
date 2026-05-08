@@ -49,7 +49,7 @@
 				<div class="mb-4">
 					<label class="form-label">在学中</label>
 					<input type="checkbox" name="attendStr"
-					<% if ("on".equals(session.getAttribute("attend"))) { %>
+					<% if ("on".equals(request.getAttribute("attend"))) { %>
 						checked="checked" 
 					<%} %>>
 				</div>
