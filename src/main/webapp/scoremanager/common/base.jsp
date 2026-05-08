@@ -63,7 +63,7 @@
 
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
     
     <!-- ヘッダー -->
     <header class="bg-white shadow-sm py-4 mb-4">
@@ -79,12 +79,12 @@
     
     <jsp:include page="/scoremanager/common/sidebar.jsp" />
 
-    <main id="main" class="container" style="max-width: 1200px;">
+    <main id="main" class="container flex-grow-1" style="max-width: 1200px;">
     ${param.content}
     </main>
     
     <!-- フッター -->
-<footer class="text-center py-3 mt-5" style="background-color:#e9ecef; width:100%;">
+<footer class="text-center py-2 mt-5" style="background-color:#e9ecef; width:100%;">
     © 2023 TIC<br>
     大原学園
 </footer>
