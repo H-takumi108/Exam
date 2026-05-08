@@ -16,15 +16,15 @@
 			<form action="StudentUpdateExecute.action" method="post">
 				
 				<div class="mb-3">
-					<label class="from-label">入学年度</label>
-					<p>${entYear}</p>
+					<label class="form-label">入学年度</label>
+					<p class="ms-3">${entYear}</p>
 					<input type="hidden" name="entYearStr" value="${entYear}">
 					
 				</div>
 				
 				<div class="mb-3">
-					<label class="from-label">学生番号</label>
-					<p>${no}</p>
+					<label class="form-label">学生番号</label>
+					<p class="ms-3">${no}</p>
 					<input type="hidden" name="noStr" value="${no}">
 				</div>
 				
