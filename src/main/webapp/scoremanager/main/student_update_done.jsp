@@ -14,7 +14,7 @@
             </div>
             
             
-            <div class="mt-4">
+            <div style="margin-top: 150px;">
                 <a href="StudentList.action">
                     学生一覧
                 </a>
