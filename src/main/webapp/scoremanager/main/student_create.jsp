@@ -64,8 +64,10 @@
 	                   <label class="form-label">クラス</label>
 	                   <select name="classNumStr" class="form-select">
 	   						 <c:forEach var="classNum" items="${classList}">
-	      					  <option value="${classNum}"
-				                selected>
+	   						  <option value="${classNum}"
+	      					  <c:if test="${classNum == selectedclassNum}">
+				                selected
+				            </c:if>>
 				            ${classNum}</option>
 	   					 </c:forEach>
 						</select>

@@ -111,7 +111,7 @@ public class StudentCreateExecuteAction extends Action {
     	
         	req.setAttribute("classList",classList);
         	req.setAttribute("ent_year_set", entYearSet);
-        	req.setAttribute("classNum",classNumStr);
+        	req.setAttribute("selectedclassNum",classNumStr);
         	
         	if (!yearerror) {
         		req.setAttribute("selectedyear",entYear);
