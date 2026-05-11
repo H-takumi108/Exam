@@ -58,7 +58,7 @@
             
 			<c:choose>
 				<c:when test="${test.size()>0 }">
-				<p>科目：${f3 }(${f4 }回)</p>
+				<p>科目：${subname }(${f4 }回)</p>
 					<form action="TestRegistExecute.action" method="post">
 					<input type="hidden" name="f1" value="${f1}">
 					<input type="hidden" name="f2" value="${f2}">

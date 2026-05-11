@@ -50,8 +50,12 @@ public class TestRegistAction extends Action {
 	    request.setAttribute("sub_name_set", subList);
 	    request.setAttribute("test_no_set", nolist);	
 
-
-
+	    Subject subject = subDao.get(subjectCdStr, school);
+	    if (subject != null) {
+	    	String subname = subject.getName();
+	    	request.setAttribute("subname", subname);
+	    }
+	    	
 	    request.setAttribute("f1", entYearStr);
 	    request.setAttribute("f2", classNumStr);
 	    request.setAttribute("f3", subjectCdStr);
@@ -67,7 +71,6 @@ public class TestRegistAction extends Action {
 	        int entYear = Integer.parseInt(entYearStr);
 	        int no = Integer.parseInt(noStr);
 
-	        Subject subject = new Subject();
 	        subject.setCd(subjectCdStr);
 
 	        TestDao dao = new TestDao();
