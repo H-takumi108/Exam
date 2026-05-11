@@ -97,7 +97,11 @@
     </main>
     
     <!-- フッター -->
-<footer class="py-1">
+<footer class="py-1"
+        style="
+           position: relative;
+           z-index: 10;
+        ">
   <div style="
       max-width: 1000px;
       margin-left: 160px;
