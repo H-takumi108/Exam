@@ -65,7 +65,8 @@
 							<input type="text" name="f4" class="form-control"
 								maxlength="10"
 								placeholder="学生番号を入力してください"
-								value="${f4}">
+								value="${f4}"
+								required>
 						</div>
 						<div class="col-2 text-end">
 							<button class="btn btn-secondary" id="filter-button-2">検索</button>
