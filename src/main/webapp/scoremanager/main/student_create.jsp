@@ -18,7 +18,11 @@
 	                  <select name="entYearStr" class="form-select">
 	                  	 <option value="">-----------</option>
 	    					<c:forEach var="year" items="${ent_year_set}">
-	     			   		<option value="${year}">${year}</option>
+	     			   		<option value="${year}"
+	     			   		 <c:if test="${year == selectedyear}">
+				                selected
+				            </c:if>>
+	     			   		${year}</option>
 	   					 </c:forEach>
 						</select>
 						

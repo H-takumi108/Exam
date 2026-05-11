@@ -36,12 +36,16 @@ public class StudentCreateExecuteAction extends Action {
     	 
     	//エラーを未発生に設定
     	boolean error = false;
+    	boolean yearerror = false;
+    	boolean noerror = false;
+    	boolean nameerror = false;
     	// 学生番号が未入力なら
     	if (noStr == null || noStr.trim().isEmpty()) {
     		//jspに表示
     	   req.setAttribute("error1", "このフィードを入力して下さい");
     	   //エラーを発生に変更
     	   error = true;
+    	   noerror = true;
     	} else {
     		//入力されていたら
     		//文字が含まれてないかを確認
@@ -49,6 +53,7 @@ public class StudentCreateExecuteAction extends Action {
     		    // 数字以外が含まれている場合
     		    req.setAttribute("error1", "学生番号は数字のみで入力してください");
     		    error = true;
+    		    noerror = true;
     		} else {
     		//重複していないかを確認
     		StudentDao dao = new StudentDao();
@@ -59,6 +64,7 @@ public class StudentCreateExecuteAction extends Action {
     	        req.setAttribute("error1", "学生番号が重複しています");
     	      //エラーを発生に変更
     	        error = true;
+    	        noerror = true;
     	    }
     	    }
     	}
@@ -68,6 +74,7 @@ public class StudentCreateExecuteAction extends Action {
     		req.setAttribute("error2", "このフィルードを入力して下さい");
     		//エラーを発生に変更
     	   error = true;
+    	   nameerror = true;
     	}
     	//入学年度が未入力なら
     	if (entYearStr == null || entYearStr.trim().isEmpty()) {
@@ -75,6 +82,7 @@ public class StudentCreateExecuteAction extends Action {
     	    req.setAttribute("error3","入学年度を選択してください");
     	  //エラーを発生に変更
     	    error = true;
+    	    yearerror = true;
     	} else {
     		//入学年度をint型に変換
     	    try {
@@ -84,10 +92,11 @@ public class StudentCreateExecuteAction extends Action {
     	        req.setAttribute("error3", "入学年度は数字で入力してください");
     	      //エラーを発生に変更
     	        error = true;
+    	        yearerror = true;
     	    }
     	}
     	//エラーが発生になっていたら
-    	if (error == true) {
+    	if (error) {
         	LocalDate todaysDate = LocalDate.now();
         	int year = todaysDate.getYear();
         	
@@ -102,12 +111,25 @@ public class StudentCreateExecuteAction extends Action {
     	
         	req.setAttribute("classList",classList);
         	req.setAttribute("ent_year_set", entYearSet);
+        	
+        	if (!yearerror) {
+        		req.setAttribute("selectedyear",entYear);
+        	}
+        	
+        	if (!noerror) {
+        		req.setAttribute("no",noStr);
+        	}
+        	
+        	if (!nameerror) {
+        		req.setAttribute("name",nameStr);
+        	}
+        	
+        	
     		//入力用のjspに戻る
     		req.getRequestDispatcher("student_create.jsp").forward(req, res);
     		return;
-    	}
+    	} else {
     	//エラーが発生していなかったら
-    	if (error == false) {
     		// 登録を行う
     	    Student student = new Student();
 
