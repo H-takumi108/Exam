@@ -39,10 +39,12 @@
         	top: 120px;
         	left: 180px;
         	width: 200px;
-        	height: calc(100vh - 420px);
+        	height: calc(100vh - 280px);
         	padding: 10px;
         	background-color: #f8f8f8;
         	overflow-y: auto;
+        	
+        	border-right: 1px solid #dcdcdc;
     	}
 
     	#sidebar ul {
