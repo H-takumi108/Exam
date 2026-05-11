@@ -21,9 +21,9 @@
 
         .header-box {
              border-radius: 0px;
-             background-color: #e9f7ff;
-             padding: 1.4rem 2rem;
-             border: 1px solid #c5c5c5;
+             background-color: #e6f1fb;
+             padding: 0.9rem 2rem;
+             border-bottom: 3px solid #e0e4ea;
          }
          
          .custom-success {
@@ -39,7 +39,7 @@
         	top: 120px;
         	left: 180px;
         	width: 200px;
-        	height: calc(100vh - 360px);
+        	height: calc(100vh - 420px);
         	padding: 10px;
         	background-color: #f8f8f8;
         	overflow-y: auto;
@@ -69,8 +69,8 @@
 <body class="bg-light">
     
     <!-- ヘッダー -->
-    <header class="pt-0 py-3 mb-2">
-      <div style="max-width: 1000px; margin: 0 auto;">
+    <header class="pt-0 py-3 mb-1">
+      <div style="max-width: 1000px; margin-left: 160px; margin-right: 20px;">
        <div class="header-box d-flex justify-content-between align-items-center">
         <h1 class="page-title m-0">得点管理システム</h1>
         
@@ -89,10 +89,10 @@
 
     <!-- main -->
     <main id="main" 
-          style="max-width:800px;
+          style="max-width:700px;
                  margin-left:400px;
                  margin-right:20px;
-                 margin-bottom:80px;">
+                 margin-bottom:250px;">
            ${param.content}
     </main>
     
@@ -100,10 +100,11 @@
 <footer class="py-1">
   <div style="
       max-width: 1000px;
-      margin: 0 auto;
+      margin-left: 160px;
+      margin-right: 20px;
       background-color:#e9ecef;
       text-align:center;
-      padding:8px 0;
+      padding:2px 0;
    ">
     © 2023 TIC<br>
     大原学園
