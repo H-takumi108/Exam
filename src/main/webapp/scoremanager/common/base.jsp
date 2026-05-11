@@ -91,7 +91,7 @@
 
     <!-- main -->
     <main id="main" 
-          style="max-width:700px;
+          style="max-width:730px;
                  margin-left:400px;
                  margin-right:20px;
                  margin-bottom:250px;">
