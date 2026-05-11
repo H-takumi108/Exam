@@ -14,7 +14,7 @@
             <div class="alert alert-success text-center custom-success">
              ログアウトしました
             </div>
-            <div class="mt-5">
+            <div style="margin-top: 150px;">
                 <a href="/ExamSystem/scoremanager/Login.action" class="text-primary text-decoration-underline">
                     ログイン
                 </a>
