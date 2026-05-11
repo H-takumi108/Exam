@@ -104,7 +104,7 @@ public class StudentCreateExecuteAction extends Action {
         	for (int i = year -10;i < year + 1; i++) {
         		entYearSet.add(i);
         	}    	
-        	
+        	 
         	School school = teacher.getSchool();
     	    ClassNumDao cdao = new ClassNumDao();
     	    List<String> classList = cdao.filter(school);
