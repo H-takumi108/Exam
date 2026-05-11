@@ -15,7 +15,7 @@
                 <!-- 学生管理 -->
                 <div class="col-md-4 col-6">
                     <div class="d-flex align-items-center justify-content-center rounded shadow"
-                         style="height: 8rem; background-color: #dbb;">
+                         style="height: 7rem; background-color: #dbb;">
                          
                         <a href="StudentList.action" class="text-primary fs-5 text-decoration-underline">学生管理</a>
                     </div>
@@ -24,7 +24,7 @@
                 <!-- 成績管理 -->
                 <div class="col-md-4 col-6">
                     <div class="d-flex flex-column align-items-center justify-content-center rounded shadow"
-                         style="height: 8rem; background-color: #bdb;">
+                         style="height: 7rem; background-color: #bdb;">
                         <div class="fs-5">成績管理</div>
                         <a href="TestRegist.action" class="fs-5 text-decoration-underline">成績登録</a>
                         <a href="TestList.action" class="fs-5 text-decoration-underline">成績参照</a>
@@ -34,7 +34,7 @@
                 <!-- 科目管理 -->
                 <div class="col-md-4 col-6">
                     <div class="d-flex align-items-center justify-content-center rounded shadow"
-                         style="height: 8rem; background-color: #bbd;">
+                         style="height: 7rem; background-color: #bbd;">
                         <a href="SubjectList.action" class="text-primary fs-5 text-decoration-underline">科目管理</a>
                     </div>
                 </div>
