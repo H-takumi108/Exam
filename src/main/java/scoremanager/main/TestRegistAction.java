@@ -27,7 +27,14 @@ public class TestRegistAction extends Action {
 	    String classNumStr = request.getParameter("f2");
 	    String subjectCdStr = request.getParameter("f3");
 	    String noStr = request.getParameter("f4");
-
+	    
+	    
+	    if ("0".equals(entYearStr)
+	            || "0".equals(classNumStr)
+	            || "0".equals(subjectCdStr)
+	            || "0".equals(noStr)) {
+	    	request.setAttribute("error", "入学年度とクラスと科目を選択してください");
+	    }
 	    School school = teacher.getSchool();
 	    ClassNumDao cNumDao = new ClassNumDao();
 	    List<String> cNumList = cNumDao.filter(school);
