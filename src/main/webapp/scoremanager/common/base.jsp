@@ -80,7 +80,7 @@
         <c:if test="${not empty sessionScope.user }">
            <div>
                 <span class="me-3">${sessionScope.user.name} 様</span>
-                <a href="Logout.action">ログアウト</a>
+                <a href="Logout.action" class="text-decoration-underline">ログアウト</a>
            </div>
         </c:if>
        </div>
