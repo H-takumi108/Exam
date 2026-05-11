@@ -94,7 +94,7 @@
           style="max-width:730px;
                  margin-left:400px;
                  margin-right:20px;
-                 margin-bottom:250px;">
+                 margin-bottom:${empty noMargin ? '250' : '0'};">
            ${param.content}
     </main>
     
