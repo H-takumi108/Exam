@@ -18,7 +18,7 @@
                 <a href="TestRegist.action" class="me-5">
                     戻る
                 </a>
-                <a href="TestRegist.action">
+                <a href="TestList.action">
                     成績参照
                 </a>
             </div>
