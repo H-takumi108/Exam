@@ -11,7 +11,7 @@
 
             <div class="px-4 fs-3 my-3">
             
-            <div class="alert alert-success text-center custom-success" style="width: 700px;">
+            <div class="alert alert-success text-center custom-success" style="width: 720px; position:relative; left:-20px;">
              ログアウトしました
             </div>
             <div style="margin-top: 150px;">
