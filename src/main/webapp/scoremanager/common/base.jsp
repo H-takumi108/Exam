@@ -111,7 +111,7 @@
       background-color:#e9ecef;
       text-align:center;
       padding:2px 0;
-      margin-top:270px;
+      margin-top:210px;
    ">
     © 2023 TIC<br>
     大原学園
