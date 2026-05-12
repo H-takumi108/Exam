@@ -103,6 +103,7 @@
         style="
            position: relative;
            z-index: 10;
+           margin-top:${not empty sessionScope.user ? '120px' : '0'};
         ">
   <div style="
       max-width: 1000px;
@@ -111,7 +112,6 @@
       background-color:#e9ecef;
       text-align:center;
       padding:2px 0;
-      margin-top:${empty param.noMargin ? '210px' : '0'};
    ">
     © 2023 TIC<br>
     大原学園
