@@ -94,7 +94,7 @@
           style="max-width:730px;
                  margin-left:400px;
                  margin-right:20px;
-                 margin-bottom:${empty noMargin ? '250' : '0'};">
+                 margin-bottom:${empty param.noMargin ? '250' : '0'};">
            ${param.content}
     </main>
     
@@ -111,7 +111,7 @@
       background-color:#e9ecef;
       text-align:center;
       padding:2px 0;
-      margin-top:210px;
+      margin-top:${empty param.noMargin ? '210px' : '0'};
    ">
     © 2023 TIC<br>
     大原学園
