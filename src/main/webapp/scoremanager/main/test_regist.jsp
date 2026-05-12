@@ -51,7 +51,7 @@
 				 </div>
 				<div class="col-2 text-center">
                      <button class="btn btn-secondary" id="filter-button">検索</button>
-                     ${error }<%--エラー処理を追加した --%>
+                     <div class="text-warning">${error }</div>
                 </div>
             </div>
             </form>
