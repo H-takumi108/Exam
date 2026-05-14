@@ -4,15 +4,4 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
          https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
-
-    <servlet>
-        <servlet-name>Action</servlet-name>
-        <servlet-class>tool.FrontController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Action</servlet-name>
-        <url-pattern>*.action</url-pattern>
-    </servlet-mapping>
-
 </web-app>

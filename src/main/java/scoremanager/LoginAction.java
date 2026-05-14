@@ -9,7 +9,7 @@ public class LoginAction extends Action {
         HttpServletRequest req, HttpServletResponse res
     ) throws Exception {
 
-        req.getRequestDispatcher("/base.jsp?content=/scoremanager/login.jsp")
+        req.getRequestDispatcher("login.jsp")
            .forward(req, res);
     }
 }
