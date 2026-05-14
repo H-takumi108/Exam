@@ -11,22 +11,30 @@ public class LoginExecuteAction extends Action {
     public void execute(
         HttpServletRequest req, HttpServletResponse res
     ) throws Exception {
-    	
+        
         HttpSession session = req.getSession();
 
         String id = req.getParameter("id");
         String password = req.getParameter("password");
+
         TeacherDAO dao = new TeacherDAO();
         Teacher teacher = dao.login(id, password);
 
         if (teacher != null) {
+
             session.setAttribute("user", teacher);
             res.sendRedirect("main/Menu.action");
+
         } else {
-        String message = "ログインに失敗しました。IDまたはパスワードが正しくありません。";
-        req.setAttribute("msg", message);
-        req.getRequestDispatcher("login.jsp")
-		.forward(req, res);
+
+            req.setAttribute("msg",
+                "ログインに失敗しました。IDまたはパスワードが正しくありません。"
+            );
+
+            req.setAttribute("content", "/scoremanager/login.jsp");
+
+            req.getRequestDispatcher("/scoremanager/common/base.jsp")
+               .forward(req, res);
         }
     }
-}  
+}
