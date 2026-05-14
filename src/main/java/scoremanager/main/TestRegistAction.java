@@ -27,7 +27,14 @@ public class TestRegistAction extends Action {
 	    String classNumStr = request.getParameter("f2");
 	    String subjectCdStr = request.getParameter("f3");
 	    String noStr = request.getParameter("f4");
-
+	    
+	    
+	    if ("0".equals(entYearStr)
+	            || "0".equals(classNumStr)
+	            || "0".equals(subjectCdStr)
+	            || "0".equals(noStr)) {
+	    	request.setAttribute("error", "入学年度とクラスと科目を選択してください");
+	    }
 	    School school = teacher.getSchool();
 	    ClassNumDao cNumDao = new ClassNumDao();
 	    List<String> cNumList = cNumDao.filter(school);
@@ -50,8 +57,12 @@ public class TestRegistAction extends Action {
 	    request.setAttribute("sub_name_set", subList);
 	    request.setAttribute("test_no_set", nolist);	
 
-
-
+	    Subject subject = subDao.get(subjectCdStr, school);
+	    if (subject != null) {
+	    	String subname = subject.getName();
+	    	request.setAttribute("subname", subname);
+	    }
+	    	
 	    request.setAttribute("f1", entYearStr);
 	    request.setAttribute("f2", classNumStr);
 	    request.setAttribute("f3", subjectCdStr);
@@ -67,7 +78,6 @@ public class TestRegistAction extends Action {
 	        int entYear = Integer.parseInt(entYearStr);
 	        int no = Integer.parseInt(noStr);
 
-	        Subject subject = new Subject();
 	        subject.setCd(subjectCdStr);
 
 	        TestDao dao = new TestDao();

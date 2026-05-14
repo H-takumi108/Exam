@@ -75,7 +75,7 @@ public class TestRegistExecuteAction extends Action {
 	                    }
 
 	                } catch (NumberFormatException e) {
-	                    error = "数値を入力してください";
+	                    error = "0～100の範囲で入力してください";
 	                    hasError = true;
 	                }
 

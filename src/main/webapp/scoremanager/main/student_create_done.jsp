@@ -14,8 +14,8 @@
             </div>
             
             
-            <div class="mt-4">
-                <a href="StudentCreate.action" class="me-3">
+            <div style="margin-top: 150px;">
+                <a href="StudentCreate.action" class="me-5">
                     戻る
                 </a>
                 <a href="StudentList.action">

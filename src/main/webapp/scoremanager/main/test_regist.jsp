@@ -51,14 +51,14 @@
 				 </div>
 				<div class="col-2 text-center">
                      <button class="btn btn-secondary" id="filter-button">検索</button>
-                     ${error }<%--エラー処理を追加した --%>
                 </div>
+                 <div class="text-warning">${error }</div>
             </div>
             </form>
             
 			<c:choose>
 				<c:when test="${test.size()>0 }">
-				<p>科目：${f3 }(${f4 }回)</p>
+				<p>科目：${subname }(${f4 }回)</p>
 					<form action="TestRegistExecute.action" method="post">
 					<input type="hidden" name="f1" value="${f1}">
 					<input type="hidden" name="f2" value="${f2}">
@@ -108,7 +108,7 @@
 							</c:forEach>
 						</table>
 						<div class="mt-3">
-							<input type="submit" value="登録して終了">
+							<input type="submit" value="登録して終了" class="btn btn-secondary rounded-2 px-4">
 						</div>
 						<div class="text-warning">${error2 }</div><%--エラー処理を追加した --%>
 					</form>

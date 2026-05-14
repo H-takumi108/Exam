@@ -22,24 +22,34 @@ public class SubjectUpdateExecuteAction extends Action {
     	//変数の定義
     	String cdStr = "";
     	String nameStr ="";
-    	
+    	 
     	//jspからの入力
     	cdStr = req.getParameter("cdStr");
     	nameStr = req.getParameter("nameStr");
-    	
+    	 
  
-    	// 登録を行う
+    	// 登録を行う 
    	    Subject subject = new Subject();
    	    subject.setSchool(school);
    	    subject.setCd(cdStr);
    	    subject.setName(nameStr);
-
+   	    
         SubjectDao dao = new SubjectDao();
+        
+        Subject sub = dao.get(cdStr, school);
+        if (sub == null) {
+        	req.setAttribute("school_cd", school.getCd());
+    	    req.setAttribute("cd", cdStr);
+    	    req.setAttribute("name", nameStr);
+    	    req.setAttribute("error", "科目が存在していません");
+    	    req.getRequestDispatcher("subject_update.jsp").forward(req, res);
+        } else {
         boolean result = dao.save(subject);
         if (result == true) {
         	req.getRequestDispatcher("subject_update_done.jsp").forward(req, res);
         } else {
         	req.getRequestDispatcher("error.jsp").forward(req, res);
+        }
         }
     }
 }

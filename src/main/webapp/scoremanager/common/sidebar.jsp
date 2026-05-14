@@ -7,12 +7,12 @@
 		<nav>
 			<ul class="list-unstyled">
 				<li class="mb-3">
-				    <a href="Menu.action" class="text-decoration-none">
+				    <a href="Menu.action" class="text-decoration-underline">
 				        メニュー
 				    </a>
 				</li>
 				<li class="mb-3">
-				    <a href="StudentList.action" class="text-decoration-none">
+				    <a href="StudentList.action" class="text-decoration-underline">
 				        学生管理
 				    </a>
 				</li>
@@ -24,13 +24,13 @@
 				    
 					<ul class="list-unstyled ms-3">
 						<li class="mb-2">
-						    <a href="TestRegist.action" class="text-decoration-none">
+						    <a href="TestRegist.action" class="text-decoration-underline">
 						        成績登録
 						    </a>
 						</li>
 						
 						<li>
-						    <a href="TestList.action" class="text-decoration-none">
+						    <a href="TestList.action" class="text-decoration-underline">
 						        成績参照
 						    </a>
 						</li>
@@ -38,7 +38,7 @@
 				</li>
 			
 			<li>
-			    <a href="SubjectList.action" class="text-decoration-none">
+			    <a href="SubjectList.action" class="text-decoration-underline">
 			        科目管理
 			    </a>
 		    </li>

@@ -16,13 +16,18 @@
 	               <div class="mb-3">
 	                   <label class="form-label">入学年度</label>
 	                  <select name="entYearStr" class="form-select">
+	                  	 <option value="">-----------</option>
 	    					<c:forEach var="year" items="${ent_year_set}">
-	     			   		<option value="${year}">${year}</option>
+	     			   		<option value="${year}"
+	     			   		 <c:if test="${year == selectedyear}">
+				                selected
+				            </c:if>>
+	     			   		${year}</option>
 	   					 </c:forEach>
 						</select>
-						
+			  			
 						<div class="text-warning">
-                            ${errors.entYear}
+                            ${error3}
                         </div>
 	               </div>
 	               
@@ -36,7 +41,7 @@
 	                          required>
 	                          
 	                          <div class="text-warning">
-                                  ${errors.no}
+                                  ${error1}
                               </div>
 	               </div>
 	               
@@ -50,7 +55,7 @@
 	                          required>
 	                          
 	                          <div class="text-warning">
-                                  ${errors.name}
+                                  ${error2}
                               </div>
 	               </div>
 	               
@@ -59,7 +64,11 @@
 	                   <label class="form-label">クラス</label>
 	                   <select name="classNumStr" class="form-select">
 	   						 <c:forEach var="classNum" items="${classList}">
-	      					  <option value="${classNum}">${classNum}</option>
+	   						  <option value="${classNum}"
+	      					  <c:if test="${classNum == selectedclassNum}">
+				                selected
+				            </c:if>>
+				            ${classNum}</option>
 	   					 </c:forEach>
 						</select>
 	               </div>

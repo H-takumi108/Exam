@@ -10,7 +10,7 @@
                科目情報変更
            </h2>
            <form action="SubjectUpdateExecute.action" method="post">
-	           <div class="container" style="max-width:600px;">
+	           <div style="max-width:600px;">
 	           	<%-- hidden --%>
 	               <input type="hidden" name="cdStr" value="${cd}">
 	               <!-- 学生番号 -->
@@ -23,8 +23,11 @@
                              ${errors.cd}
                           </div>
                        </c:if>
+                       <div class="text-warning">
+                             ${error}
+                       </div>
 	               </div>
-	               
+	                 
 	               <!-- 氏名 -->
 	               <div class="mb-3">
 	                   <label class="form-label">科目名</label>

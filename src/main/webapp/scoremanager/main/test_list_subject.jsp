@@ -65,7 +65,8 @@
 							<input type="text" name="f4" class="form-control"
 								maxlength="10"
 								placeholder="学生番号を入力してください"
-								value="${f4}">
+								value="${f4}"
+								required>
 						</div>
 						<div class="col-2 text-end">
 							<button class="btn btn-secondary" id="filter-button-2">検索</button>
@@ -83,9 +84,8 @@
 							<th>クラス</th>
 							<th>学籍番号</th>
 							<th>氏名</th>
-							<c:forEach var="tlsbP" items="${tlsb[0].point }">
-								<th>${tlsbP.key }回</th>
-							</c:forEach>
+							<th>1回</th>
+							<th>2回</th>
 						</tr>
 						
 						<c:forEach var="tlsb" items="${tlsb }">
@@ -94,9 +94,15 @@
 								<td>${f2 }</td>
 								<td>${tlsb.studentNo }</td>
 								<td>${tlsb.studentName }</td>
-								<c:forEach var="tlsbP" items="${tlsb.point }">
-									<td>${tlsbP.value }</td>
+								<c:forEach var="tlsbP" items="${tlsb.point}">
+								    <td>
+								        ${empty tlsbP.value ? "-" : tlsbP.value}
+								    </td>
 								</c:forEach>
+								
+								<c:if test="${tlsb.point.size() == 1}">
+								    <td>-</td>
+								</c:if>
 							</tr>
 						</c:forEach>
 					</table>
