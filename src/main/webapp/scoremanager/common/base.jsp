@@ -94,7 +94,7 @@
           style="max-width:730px;
                  margin-left:400px;
                  margin-right:20px;
-                 margin-bottom:${empty param.noMargin ? '250' : '0'};">
+                 margin-bottom:${empty param.noMargin ? '250px' : '0px'};">
            ${param.content}
     </main>
     
@@ -103,7 +103,7 @@
         style="
            position: relative;
            z-index: 10;
-           margin-top:${not empty sessionScope.user ? '120px' : '0'};
+           margin-top:${not empty sessionScope.user ? '120px' : '0px'};
         ">
   <div style="
       max-width: 1000px;
