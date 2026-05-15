@@ -14,15 +14,9 @@ public class FrontController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         try {
             // パスを取得
-        	String path = req.getServletPath().substring(1);
-
-        	// パッケージ名が付いていない場合は scoremanager を補完
-        	if (!path.contains("/")) {
-        	    path = "scoremanager/" + path;
-        	}
-
-        	String name = path.replace(".action", "Action").replace('/', '.');
-        	
+            String path = req.getServletPath().substring(1);
+            // ファイル名を取得しクラス名に変換
+            String name = path.replace(".a", "A").replace('/', '.');
             // アクションクラスのインスタンスを返却
             Action action = (Action) Class.forName(name).getDeclaredConstructor().newInstance();
 

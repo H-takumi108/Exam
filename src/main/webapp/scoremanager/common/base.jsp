@@ -91,12 +91,21 @@
 
     <!-- main -->
     <main id="main" 
+<<<<<<< HEAD
 	      style="max-width:730px;
 	             margin-left:400px;
 	             margin-right:20px;
 	             margin-bottom:${empty param.noMargin ? '250px' : '0px'};">
 	       <jsp:include page="${content}" />
 	</main>
+=======
+          style="max-width:730px;
+                 margin-left:400px;
+                 margin-right:20px;
+                 margin-bottom:${empty param.noMargin ? '250px' : '0px'};">
+           ${param.content}
+    </main>
+>>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
     
     <!-- フッター -->
 <footer class="py-1"
