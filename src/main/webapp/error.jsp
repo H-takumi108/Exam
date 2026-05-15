@@ -6,18 +6,10 @@
 
     <c:param name="title">得点管理システム</c:param>
 
-<<<<<<< HEAD
     <c:param name="noMargin">true</c:param>
 
-    <c:param name="content"><![CDATA[
+    <c:param name="content">
         <p>エラーが発生しました</p>
-    ]]></c:param>
-=======
-<c:param name="noMargin">true</c:param>
-
-<c:param name="content">
-	<p>エラーが発生しました</p>
-</c:param>
->>>>>>> branch 'master' of https://github.com/H-takumi108/Exam
+    </c:param>
 
 </c:import>
