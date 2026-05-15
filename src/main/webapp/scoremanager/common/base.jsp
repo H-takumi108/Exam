@@ -91,19 +91,19 @@
 
     <!-- main -->
     <main id="main" 
-          style="max-width:730px;
-                 margin-left:400px;
-                 margin-right:20px;
-                 margin-bottom:${empty param.noMargin ? '250' : '0'};">
-           ${param.content}
-    </main>
+	      style="max-width:730px;
+	             margin-left:400px;
+	             margin-right:20px;
+	             margin-bottom:${empty param.noMargin ? '250px' : '0px'};">
+	       <jsp:include page="${content}" />
+	</main>
     
     <!-- フッター -->
 <footer class="py-1"
         style="
            position: relative;
            z-index: 10;
-           margin-top:${not empty sessionScope.user ? '120px' : '0'};
+           margin-top:${not empty sessionScope.user ? '120px' : '0px'};
         ">
   <div style="
       max-width: 1000px;
