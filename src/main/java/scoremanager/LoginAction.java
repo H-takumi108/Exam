@@ -14,7 +14,7 @@ public class LoginAction extends Action {
 
         req.setAttribute("content", "/scoremanager/login.jsp");
 
-        req.getRequestDispatcher("/scoremanager/common/base.jsp")
+        req.getRequestDispatcher("/scoremanager/common/base.jsp");
 
         req.getRequestDispatcher("login.jsp")
            .forward(req, res);
