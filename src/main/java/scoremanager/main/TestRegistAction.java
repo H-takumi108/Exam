@@ -33,7 +33,7 @@ public class TestRegistAction extends Action {
 	            || "0".equals(classNumStr)
 	            || "0".equals(subjectCdStr)
 	            || "0".equals(noStr)) {
-	    	request.setAttribute("error", "入学年度とクラスと科目を選択してください");
+	    	request.setAttribute("error", "入学年度とクラスと科目と回数を選択してください");
 	    }
 	    School school = teacher.getSchool();
 	    ClassNumDao cNumDao = new ClassNumDao();
