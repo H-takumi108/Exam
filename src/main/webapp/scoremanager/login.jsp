@@ -126,7 +126,8 @@
         </div>
 
         <p class="checkbox-area">
-            <input type="checkbox" id="showPass"> パスワードを表示
+            <input type="checkbox" id="showPass">
+            <label for="showPass">パスワードを表示</label>
         </p>
 
         <p><input type="submit" value="ログイン"></p>
