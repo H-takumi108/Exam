@@ -70,7 +70,7 @@
 							<tr>
 								<th>入学年度</th>
 								<th>クラス</th>
-								<th>学籍番号</th>
+								<th>学生番号</th>
 								<th>氏名</th>
 								<th class="text-center">点数</th>
 							</tr>
