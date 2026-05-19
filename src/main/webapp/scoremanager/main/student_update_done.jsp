@@ -9,7 +9,12 @@
         <section>
             <h2 class="h3 mb-3 fw-bold bg-secondary bg-opacity-10 py-2 px-4">学生情報変更</h2>
             
-            <div class="alert alert-success text-center custom-success">
+            <div style="
+                background-color:#8fc9a8;
+                padding:10px 0;
+                text-align:center;
+                margin-bottom:120px;
+            ">
                 変更が完了しました。
             </div>
             
