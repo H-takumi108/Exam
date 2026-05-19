@@ -10,7 +10,7 @@
                科目情報登録
            </h2>
            <form action="SubjectCreateExecute.action" method="post">
-	           <div class="container" style="max-width:600px;">
+	           <div class="container" style="max-width:100%;">
 	               
 	               <!-- 学生番号 -->
 	               <div class="mb-3">
@@ -35,7 +35,7 @@
 	               </div>
 	               
 	               <div class="text-start">
-	                    <input type="submit" value="登録" class="btn btn-primary rounded-2 px-4">
+	                    <input type="submit" value="登録" class="btn btn-primary rounded-2 px-2">
 	               </div>
 
                </form>
