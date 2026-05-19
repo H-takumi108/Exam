@@ -33,7 +33,7 @@ public class SubjectCreateExecuteAction extends Action {
     	if (cdStr == null || cdStr.length() != 3) {
     		//jspに表示
     	   req.setAttribute("error", "科目コードは３文字で入力してください");
-    	   //エラーを発生に変更
+    	     	   //エラーを発生に変更
     	   error = true;
     	} else {
     		//重複していないかを確認
@@ -51,6 +51,7 @@ public class SubjectCreateExecuteAction extends Action {
     	//エラーが発生になっていたら
     	if (error == true) {
     		//入力用のjspに戻る
+    		req.setAttribute("cd", cdStr);  
     		req.setAttribute("name",nameStr);
     		req.getRequestDispatcher("subject_create.jsp").forward(req, res);
     		return;
