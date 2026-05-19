@@ -18,6 +18,7 @@
 					margin-left: -25px;
 					margin-bottom: 0;
 					border-radius: 0;
+					font-size: 80%;
 					--bs-alert-bg: #19875496;">
 					ログアウトしました
             </div>
