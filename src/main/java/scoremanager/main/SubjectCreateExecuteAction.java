@@ -55,7 +55,7 @@ public class SubjectCreateExecuteAction extends Action {
     		req.setAttribute("name",nameStr);
     		req.getRequestDispatcher("subject_create.jsp").forward(req, res);
     		return;
-    	}
+    	} 
     	//エラーが発生していなかったら
     	if (error == false) {
     		// 登録を行う
