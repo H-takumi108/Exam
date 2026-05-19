@@ -107,7 +107,7 @@
 
 <div class="login-box">
 
-    <div class="login-title">ログイン</div>
+    <h2 class="login-title">ログイン</h2>
 
     <form action="<c:url value='/scoremanager/LoginExecute.action' />" method="post">
 
